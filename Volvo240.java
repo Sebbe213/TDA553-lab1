@@ -4,15 +4,11 @@ import java.awt.*;
 
 public class Volvo240 extends Cars{
 
-    public final static double trimFactor = 1.25;
-    public int nrDoors; // Number of doors on the car
-    public double enginePower; // Engine power of the car
-    public double currentSpeed; // The current speed of the car
-    public Color color; // Color of the car
-    public String modelName; // The car model name
+    private final static double trimFactor = 1.25;
     
-    private Volvo240(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed) {
-        super(nrDoors, color, enginePower, modelName, currentSpeed);
+    
+    public Volvo240(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double yVelocity, double xVelocity,double xCoordination,double yCoordination) {
+        super(nrDoors, color, enginePower, modelName, currentSpeed,yVelocity,xVelocity,xCoordination,yCoordination);
 
         nrDoors = 4;
         color = Color.black;
