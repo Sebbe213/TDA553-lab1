@@ -1,6 +1,6 @@
 import java.awt.*;
 
-import hej.Cars;
+//import Cars;
 
 public class Saab95 extends Cars{
 
