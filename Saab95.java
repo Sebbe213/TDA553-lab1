@@ -9,7 +9,7 @@ public class Saab95 extends Cars{
     private Saab95(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed)
     {super(nrDoors, color, enginePower, modelName, currentSpeed);}
 
-    ///public Saab95()
+    //public Saab95()
     {
         nrDoors = 2;
         color = Color.red;
