@@ -5,7 +5,27 @@ import java.awt.*;
 import static org.junit.Assert.*;
 
 public class Saab95Test {
+    @Test
+    public void speedFactor() {
+    }
 
+    @Test
+    public void incrementSpeed() {
+    }
+
+    @Test
+    public void decrementSpeed() {
+    }
+
+    @Test
+    public void gas() {
+    }
+
+    @Test
+    public void brake() {
+    }
+
+    /*
     @Test
     public void setTurboOn() {
         Saab95 mySebbe = new Saab95(2, Color.WHITE,125,"Volvo240",0.1,10,10,0,0);
@@ -20,15 +40,9 @@ public class Saab95Test {
 
         assertFalse(mySebbe.turboOn);
 
-    }
+     */
 
-    @Test
-    public void speedFactor() {
-        // HEEEEEEEEEEEEEEEEEEEEj
 
-    }
 
-    @Test
-    public void brake() {
-    }
+
 }
