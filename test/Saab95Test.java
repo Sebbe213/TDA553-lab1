@@ -1,28 +1,59 @@
-import org.junit.Test;
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.awt.*;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
 
 public class Saab95Test {
     @Test
-    public void speedFactor() {
+    public void speedFactorTest() {
+        Saab95 saab = new Saab95(2, Color.WHITE,125,"Saab95",0.1,10,10,0,0);
+        assertEquals(1.625,saab.speedFactor(20));
+    }
+
+
+
+    @Test
+    public void incrementSpeedTest() {
+        Saab95 saab = new Saab95(2, Color.WHITE,125,"Saab95",0.1,10,10,0,0);
+        saab.incrementSpeed(10);
+        assertEquals(16.35,saab.getCurrentSpeed());
+
+
     }
 
     @Test
-    public void incrementSpeed() {
+    public void decrementSpeedTest() {
+        Saab95 saab = new Saab95(2, Color.WHITE,125,"Saab95",0.1,10,10,0,0);
+        saab.decrementSpeed(10);
+        assertEquals(-16.15,saab.getCurrentSpeed());
+
     }
 
     @Test
-    public void decrementSpeed() {
+    public void gasTest() {
+    Saab95 saab = new Saab95(2, Color.WHITE,125,"Saab95",0.1,10,10,0,0);
+    
+
+
     }
 
     @Test
-    public void gas() {
+    public void brakeTest() {
     }
 
     @Test
-    public void brake() {
+    public void turnRightTest(){
+        Saab95 saab = new Saab95(2, Color.WHITE,125,"Saab95",0.1,0,10,0,0);
+        saab.setxCoordination();
+        saab.setyCoordination();
+        assertEquals(null, saab.getxCoordination());
+        assertEquals(null, saab.getyCoordination());
+
+
+
     }
 
     /*
