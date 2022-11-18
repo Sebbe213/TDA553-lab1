@@ -6,12 +6,12 @@ public class Saab95 extends Cars{
 
     public boolean turboOn;
 
-    public Saab95(int nrDoors, Color color, double enginePower, String modelName, double currentSpeeddouble , double currentSpeed, double yVelocity, double xVelocity, double xCoordination, double yCoordination)
+    public Saab95(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double yVelocity, double xVelocity, double xCoordination, double yCoordination)
     {super(2, Color.red, 125, "Saab95", 0.1, yVelocity, xVelocity, xCoordination,yCoordination);
     
     stopEngine();
     startEngine();
-    turboOn = true;
+    turboOn = false;
     }
     
     
