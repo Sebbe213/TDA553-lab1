@@ -16,16 +16,15 @@ public abstract class Cars implements Movable {
 
 
 
-    protected Cars(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double yCoordination, double xCoordination, double xVelocity, double yVelocity){
+    protected Cars(int nrDoors, Color color, double enginePower, String modelName, double xVelocity, double yVelocity){
     this.nrDoors = nrDoors;
     this.color = color;
     this.enginePower = enginePower;
     this.modelName = modelName;
-    this.currentSpeed = 0.1;
+    this.currentSpeed = 1000;
     this.xVelocity = xVelocity;
     this.yVelocity = yVelocity;
-    this.xCoordination = xCoordination;
-    this.yCoordination = yCoordination;
+    
 
 
 
@@ -60,13 +59,13 @@ public abstract class Cars implements Movable {
 
     public void turnLeft(){
         if (yVelocity == 0){
-            if(xVelocity>0) {
+            if(xVelocity > 0) {
                 xVelocity = 0;
                 yVelocity = -1 * currentSpeed;
             }
-                else if (xVelocity<0){
+                else if (xVelocity < 0){
                     xVelocity = 0;
-                    xVelocity = 1 * currentSpeed;
+                    yVelocity = 1 * currentSpeed;
             }}
             if (xVelocity == 0){
                 if (yVelocity < 0){
@@ -134,6 +133,16 @@ public abstract class Cars implements Movable {
 
     protected void stopEngine(){
         currentSpeed = 0;
+    }
+
+    public void gas(double amount){
+        incrementSpeed(amount);
+        
+    }
+
+  
+    public void brake(double amount){
+        decrementSpeed(amount);
     }
 
     protected abstract double speedFactor(double amount);
