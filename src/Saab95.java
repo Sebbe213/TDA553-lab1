@@ -6,8 +6,8 @@ public class Saab95 extends Cars{
 
     public boolean turboOn;
 
-    public Saab95(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double yVelocity, double xVelocity, double xCoordination, double yCoordination)
-    {super(2, Color.red, 125, "Saab95", 0.1, yVelocity, xVelocity, xCoordination,yCoordination);
+    public Saab95(int nrDoors, Color color, double enginePower, String modelName, double yVelocity, double xVelocity)
+    {super(2, Color.red, 125, "Saab95", yVelocity, xVelocity);
     
     stopEngine();
     startEngine();
@@ -39,16 +39,6 @@ public class Saab95 extends Cars{
         currentSpeed = getCurrentSpeed() - speedFactor(amount) * amount;
     }
     
-    // TODO fix this method according to lab pm
    
-  
-    public void gas(double amount){
-        incrementSpeed(amount);
-    }
-
-    // TODO fix this method according to lab pm
-    public void brake(double amount){
-        decrementSpeed(amount);
-    }
 
 }
