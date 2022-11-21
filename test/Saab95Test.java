@@ -28,9 +28,6 @@ public class Saab95Test {
         assertEquals(-6.25, saab.getCurrentSpeed());
     }
 
-    @Test
-    public void brakeTest() {
-    }
 
     @Test
     public void turnRightTest() {
