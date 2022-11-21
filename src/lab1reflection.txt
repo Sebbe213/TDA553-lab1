@@ -1,0 +1,29 @@
+1. Vi har skapat en ny fil där vi har "bosatt" vår superklass med alla gemensamma attribut och metoder mellan Saab och Volvo. 
+Metoderan och attributen har är av typen protected så att de endast kan ändras av subklasserna.  
+Efter detta tog vi bort de gemensamma attributen och metoderna  från subklasserna  för att undvika redundans i koden.
+
+Vi har två olika typer av metoder där de ena har vi overridat för att ha en egen implementation i respektive subklass, och de andra metoderna är ärvda precis så som de är.
+Alla metoder och attribut är av type protected vilket gör att de bara är synliga av subklassen. 
+På så sätt är de otillgängliga utanför subklasserna respektive superklassen men ändå implemeneterbara för vidare utveckling.*
+
+2. Till att börja med ladde vi break och gas i superklassen Cars eftersom det är metoder som bör vara gemensamma för Saab och Volvo. 
+Dock ser metoderan increment-/decrementspeed olika i saab och volvo därför att vi increementerar/deecrementerar hastigheten på olika sätt för respektive bil. 
+Implementationen ser ut som följande: 
+I gas och break så har vi en if-sats som begränasr inputen av av parametern amount till intervallet [0,1].
+Gasmetoden kallar på incrementspeed medan break kallar på decrementspeed. 
+
+Trots att increment och decrementspeed ser olika ut får saab respektive volvo så kallar båda metoderan i filerna på speedfactor och currentspeed. 
+
+implementationen av speedfactor är nästan identiska i saab och volvo. I båda begränsar vi currentspeed sådana att speedfactor ställs för 0 om  en av tre möjliga senarion inträffar: 
+ 1. currentspeed= enginpower
+ 2. currentspeed = 0
+ 3 currentspeed < 0
+ på så sätt behåller speedfactor ett absoult värde som är alltid mindre än enginpower som gör det omöjligt för gas att decrementera hastigheten eller för break att increementera den. 
+ Det som särskiljer metoderna åt är att vi har olika sätt att kraftigt öka hastigheten (boost), i saab är det turbo medan i volvo är det trimfactor. 
+
+
+
+
+
+
+*Detta i enlighet med open close principle där coden bör vara felxibel med möjligheten att lätt ta bort och lägga till kod.
