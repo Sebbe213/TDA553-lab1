@@ -7,18 +7,31 @@ public class Volvo240 extends Cars{
     private final static double trimFactor = 1.25;
     
     
-    public Volvo240(int nrDoors, Color color, double enginePower, String modelName, double yVelocity, double xVelocity,double xCoordination,double yCoordination) {
-        super(4, Color.black, 100, "Volvo240",yVelocity,xVelocity);
-
-        stopEngine();
-        startEngine();
+    public Volvo240(int nrDoors, Color color, double enginePower, String modelName, double xVelocity, double yVelocity) {
+        super(4, Color.black, 100, "Volvo240",xVelocity,yVelocity);
+        //stopEngine();
+        //startEngine();
     }
     
 
     @Override
     protected double speedFactor(double amount) {
-        return enginePower * 0.01 * trimFactor;
-    }
+        if (currentSpeed == enginePower) {
+            return 0;
+        }
+        else if (currentSpeed > 0 || currentSpeed < enginePower) {
+            return enginePower * 0.01 * trimFactor;
+        }
+
+        else if (currentSpeed == 0) {
+                return 0;
+        }
+            else if (currentSpeed < 0) {
+                currentSpeed = 0;
+                return 0;
+            }
+            return -1;
+        }
 
     @Override
     public void incrementSpeed(double amount){
@@ -29,6 +42,4 @@ public class Volvo240 extends Cars{
     public void decrementSpeed(double amount){
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor(amount) * amount,0);
     }
-
-  
 }

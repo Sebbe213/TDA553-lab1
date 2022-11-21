@@ -21,13 +21,9 @@ public abstract class Cars implements Movable {
     this.color = color;
     this.enginePower = enginePower;
     this.modelName = modelName;
-    this.currentSpeed = 1000;
+    this.currentSpeed = 10;
     this.xVelocity = xVelocity;
     this.yVelocity = yVelocity;
-    
-
-
-
 }
 
     public void turnRight(){
@@ -41,7 +37,7 @@ public abstract class Cars implements Movable {
                 yVelocity = -1 * currentSpeed;
             }
         }
-        if (xVelocity == 0){
+        else if (xVelocity == 0){
             if (yVelocity < 0){
                 xVelocity = 1 * currentSpeed;
                 yVelocity = 0;
@@ -59,15 +55,15 @@ public abstract class Cars implements Movable {
 
     public void turnLeft(){
         if (yVelocity == 0){
-            if(xVelocity > 0) {
+            if(xVelocity>0) {
                 xVelocity = 0;
                 yVelocity = -1 * currentSpeed;
             }
-                else if (xVelocity < 0){
+                else if (xVelocity<0){
                     xVelocity = 0;
-                    yVelocity = 1 * currentSpeed;
+                    xVelocity = 1 * currentSpeed;
             }}
-            if (xVelocity == 0){
+            else if (xVelocity == 0){
                 if (yVelocity < 0){
                     xVelocity = -1 *currentSpeed;
                     yVelocity = 0;
@@ -79,10 +75,12 @@ public abstract class Cars implements Movable {
             }
     }
 
+
     public void move(){
         xVelocity = currentSpeed;
         yVelocity = 0;
     }
+
 
     public void setxCoordination() {
     xCoordination += xVelocity;
@@ -135,22 +133,22 @@ public abstract class Cars implements Movable {
         currentSpeed = 0;
     }
 
-    public void gas(double amount){
-        incrementSpeed(amount);
-        
-    }
-
-  
-    public void brake(double amount){
-        decrementSpeed(amount);
-    }
-
     protected abstract double speedFactor(double amount);
 
     protected abstract void incrementSpeed(double amount);
 
     protected abstract void decrementSpeed(double amount);
 
+    public void gas(double amount) {
+        if (0 <= amount || amount <= 1) {
+            incrementSpeed(amount);
+        } else {incrementSpeed(0);}
+    }
+    public void brake(double amount) {
+        if (0 <= amount || amount <= 1) {
+            decrementSpeed(amount);
+        } else {decrementSpeed(0);}
+    }
 }
 
 
