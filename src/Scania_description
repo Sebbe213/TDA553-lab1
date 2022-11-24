@@ -1,0 +1,13 @@
+klassen Scania
+
+fyll i lämpliga värden i konstruktorn
+lägg till en attribut/objekt som beskriver existensen av en platta som kan ha en vinkel
+
+fixa inheritance i enlighet med herarkien i labb 1
+
+en metod för att kontrollera vinkeln av plattan i bak med följande vilkor:
+1) vinkeln ska vara mellan 0-70 grader.
+2) om plattan håller på att höjas/sänkas (derivatan av plattans hastighet) då måste hastigheten på bilen vara noll.
+
+
+Skapa en till testfil för att testa alla metoder
