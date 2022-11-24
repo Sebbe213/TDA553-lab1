@@ -37,6 +37,10 @@ fixa en metod som sköter lastningen av bilarna under följande vilkor:
 
 Task 3:
 
-klassen repair shop
+klassen repair shop, enligt följande villkor:
 
-lägg till en att 
+1) lägg till en att attribut i kontruktorn som beskriver kapaciteten av antal bilar.
+2) bilen som ska in i rapairshopen ska vara tillräckligt mycket nära shopen (rimligt nära, tänk dig pixelmässigt eller beroende på hur stor fönstret är)
+3) bilen som ska ut ur rapairshopen ska vara tillräckligt mycket nära shopen (rimligt nära, tänk dig pixelmässigt eller beroende på hur stor fönstret är)
+
+
