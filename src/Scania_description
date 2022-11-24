@@ -23,3 +23,20 @@ fixa inheritance/delegation i enlighet med herarkien i labb 1
 
 lägg till en attribut/objekt och eller använda delgation för att antingen återanvända gemensamma metoder från scania som har att göra med plattan.
 
+fixa en metod för att kunna loada på o av bilar mha rampen
+
+rampens funktionalitet ska vara begränsad enligt följande vilkor:
+
+1) den ska antingen vara ner eller upp
+2) rampen kan vara nere om och endast om bilnes hastighet är noll
+3) bilens hastighet får inte ändras (derivatan av bilens hastighet ska vara konstant och ha värdet noll) om rampen är nere
+4) om bilens hastighet är större än noll då får rampen vara uppe.
+
+fixa en metod som sköter lastningen av bilarna under följande vilkor:
+1) bilen som ska lastas ska vara tillräckligt mycket nära (rimligt nära, tänk dig pixelmässigt eller beroende på hur stor fönstret är)
+
+Task 3:
+
+klassen repair shop
+
+lägg till en att 
