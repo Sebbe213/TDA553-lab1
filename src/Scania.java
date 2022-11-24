@@ -27,7 +27,8 @@ public class Scania extends Cars {
         
     }
 
-    protected void Platform(){
+    protected void PlatformOrRamp(){
+
 
     }
     

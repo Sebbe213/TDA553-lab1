@@ -5,7 +5,7 @@ lägg till ett attribut/objekt som beskriver existensen av en platta som kan ha 
 
 fixa inheritance i enlighet med herarkien i labb 1
 
-en metod för att kontrollera vinkeln av plattan i bak med följande vilkor:
+en metod för att kontrollera vinkeln av plattan i bak med följande vilLkor:
 1) vinkeln ska vara mellan 0-70 grader.
 2) om plattan håller på att höjas/sänkas (derivatan av plattans hastighet) då måste hastigheten på bilen vara noll.
 
