@@ -3,7 +3,7 @@ import java.awt.*;
 public class Scania extends Cars {
 
     public Scania(int nrDoors, Color color, double enginePower, String modelName, double xVelocity, double yVelocity)
-    {super(2, Color.green, 125, "Scania",xVelocity,yVelocity);
+    {super(2, Color.green, 95, "Scania",xVelocity,yVelocity);
 
 }
 
@@ -22,6 +22,22 @@ public class Scania extends Cars {
     @Override
     protected void decrementSpeed(double amount) {
         // TODO Auto-generated method stub
+
+
         
+    }
+
+    protected void Platform(){
+
+    }
+    
+    protected void Raise(){
+        // max angel of raise 70 degrees (abstract?)
+
+    }
+
+    protected void Lower(){
+        //min angel 0 degrees (abstract?) implement delegation
+
     }
 }
