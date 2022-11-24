@@ -1,3 +1,5 @@
+Task 1:
+
 klassen Scania
 
 fyll i lämpliga värden i konstruktorn
@@ -11,4 +13,13 @@ en metod för att kontrollera vinkeln av plattan med följande vilkor:
 
 
 Skapa en till testfil för att testa alla metoder
+
+Task 2:
+klassen transporter
+
+fyll i lämpliga värden i konstruktorn, ett
+
+fixa inheritance/delegation i enlighet med herarkien i labb 1
+
+lägg till en attribut/objekt och eller använda delgation för att antingen återanvända gemensamma metoder från scania som har att göra med plattan
 
