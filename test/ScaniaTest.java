@@ -9,8 +9,8 @@ class ScaniaTest {
     @Test
     void raise() {
         Scania scaniaS = new Scania(2, Color.gray, 90, "Scania Model S", 0,0);
-        scaniaS.platta.raise(10);
-        assertEquals(10,scaniaS.platta.angel);
+        scaniaS.Raise();
+        assertEquals(10,scaniaS.platta.getAngle());
     }
 
     @Test

@@ -1,11 +1,15 @@
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Scania extends Cars {
 
-    Platform platta;
+    Platform platta = new Platform(rear.Level.DOWN,0);
+    //ArrayList<Cars> arrayList = new ArrayList<>(5);
 
     public Scania(int nrDoors, Color color, double enginePower, String modelName, double xVelocity, double yVelocity) {
         super(2, Color.gray, 90, "Scania Model S", xVelocity, yVelocity);
+
 
     }
 
@@ -32,14 +36,14 @@ public class Scania extends Cars {
 
     }
 
-    public void raise() {
+    public void Raise() {
         if (currentSpeed == 0) {
             platta.raise(0);
         }
     }
 
 
-    public void lower() {
+    public void Lower() {
         if (currentSpeed == 0) {
             platta.lower(0);
         }
