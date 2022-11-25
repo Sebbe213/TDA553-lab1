@@ -1,4 +1,4 @@
-public interface Ramp_level {
+public interface rear {
     enum Level {
         UP,
         DOWN,

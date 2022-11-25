@@ -1,4 +1,4 @@
-public class  Ramp implements Ramp_level {
+public class Ramp implements rear {
     Level ramp;
     boolean rampen;
 

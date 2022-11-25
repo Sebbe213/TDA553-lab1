@@ -2,10 +2,12 @@ import java.awt.*;
 
 public class Scania extends Cars {
 
-    public Scania(int nrDoors, Color color, double enginePower, String modelName, double xVelocity, double yVelocity)
-    {super(2, Color.green, 95, "Scania",xVelocity,yVelocity);
+    Platform platta;
 
-}
+    public Scania(int nrDoors, Color color, double enginePower, String modelName, double xVelocity, double yVelocity) {
+        super(2, Color.gray, 90, "Scania Model S", xVelocity, yVelocity);
+
+    }
 
     @Override
     protected double speedFactor(double amount) {
@@ -16,7 +18,7 @@ public class Scania extends Cars {
     @Override
     protected void incrementSpeed(double amount) {
         // TODO Auto-generated method stub
-        
+
     }
 
     @Override
@@ -24,21 +26,22 @@ public class Scania extends Cars {
         // TODO Auto-generated method stub
 
 
-        
     }
 
-    protected void PlatformOrRamp(){
-
-
-    }
-    
-    protected void Raise(){
-        // max angel of raise 70 degrees (abstract?)
+    protected void PlatformOrRamp() {
 
     }
 
-    protected void Lower(){
-        //min angel 0 degrees (abstract?) implement delegation
+    public void raise() {
+        if (currentSpeed == 0) {
+            platta.raise(0);
+        }
+    }
 
+
+    public void lower() {
+        if (currentSpeed == 0) {
+            platta.lower(0);
+        }
     }
 }

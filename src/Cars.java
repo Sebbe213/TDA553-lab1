@@ -82,19 +82,19 @@ public abstract class Cars implements Movable {
     }
 
 
-    public void setxCoordination() {
+    protected void setxCoordination() {
     xCoordination += xVelocity;
     }
 
-    public double getxCoordination() {
+    protected double getxCoordination() {
     return xCoordination;
     }
 
-    public void setyCoordination() {
+    protected void setyCoordination() {
     yCoordination += yVelocity;
     }
 
-    public double getyCoordination() {
+    protected double getyCoordination() {
         return yCoordination;
     }
 //______________________________________________________//
@@ -139,12 +139,12 @@ public abstract class Cars implements Movable {
 
     protected abstract void decrementSpeed(double amount);
 
-    public void gas(double amount) {
+    protected void gas(double amount) {
         if (0 <= amount || amount <= 1) {
             incrementSpeed(amount);
         } else {incrementSpeed(0);}
     }
-    public void brake(double amount) {
+    protected void brake(double amount) {
         if (0 <= amount || amount <= 1) {
             decrementSpeed(amount);
         } else {decrementSpeed(0);}

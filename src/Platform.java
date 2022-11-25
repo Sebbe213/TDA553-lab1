@@ -1,23 +1,24 @@
 
-public class Platform implements iPlatformInterface, Ramp_level {
+public class Platform implements iPlatformInterface, rear {
     protected double angel;
-    Ramp_level.Level platform;
+    rear.Level platform;
 
 
-    protected Platform(Ramp_level.Level platform, double angel) {
+
+    protected Platform(rear.Level platform, double angel) {
         this.platform = platform;
-        this.angel = angel;
+        this.angel = 0;
     }
 
     public void lower(double amount) {
         if (angel == 0) {
             angel -= 0;
+            platform = Level.DOWN;
         }
         if (angel > 0 && angel < 70) {
             if (angel - amount < 0) {
                 angel = 0;
             } else {
-                platform = Level.DOWN;
                 angel -= amount;
             }
         }
@@ -26,12 +27,12 @@ public class Platform implements iPlatformInterface, Ramp_level {
     public void raise(double amount) {
         if (angel == 70) {
             angel += 0;
+            platform = Level.UP;
         }
         if (angel < 70 && angel > 0) {
             if (angel + amount > 70) {
                 angel = 70;
             } else {
-                platform = Level.UP;
                 angel += amount;
             }
         }
@@ -40,5 +41,8 @@ public class Platform implements iPlatformInterface, Ramp_level {
 
         }*/
     }
+
+    protected double getAngle() {
+        return angel;
+    }
 }
-// what is new
