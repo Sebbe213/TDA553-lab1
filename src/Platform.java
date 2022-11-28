@@ -7,7 +7,7 @@ public class Platform implements iPlatformInterface, rear {
 
     protected Platform(rear.Level platform, double angel) {
         this.platform = platform;
-        this.angel = 0;
+        this.angel = angel;
     }
 
     public void lower(double amount) {
@@ -36,10 +36,6 @@ public class Platform implements iPlatformInterface, rear {
                 angel += amount;
             }
         }
-        /*public void getRaise() {
-
-
-        }*/
     }
 
     protected double getAngle() {
