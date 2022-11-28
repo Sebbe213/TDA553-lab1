@@ -12,8 +12,7 @@ class ScaniaTest {
         Scania scaniaS = new Scania(2, Color.gray, 90, "Scania Model S",0, 0,0);
 
         scaniaS.raiseIfStationary();
-        assertEquals(10,scaniaS.platta.getAngle());
-
+        assertEquals(16,scaniaS.platta.getAngle());
     }
 
     @Test

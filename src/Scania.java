@@ -8,7 +8,7 @@ public class Scania extends Cars {
     //ArrayList<Cars> arrayList = new ArrayList<>(5);
 
     public Scania(int nrDoors, Color color, double enginePower, String modelName,double currentSpeed, double xVelocity, double yVelocity) {
-        super(2, Color.gray, 90, "Scania Model S",0, xVelocity, yVelocity);
+        super(2, Color.gray, 90, "Scania Model S",currentSpeed, xVelocity, yVelocity);
 
 
     }
@@ -38,8 +38,8 @@ public class Scania extends Cars {
 
     public void raiseIfStationary() {
         if (currentSpeed == 0) {
-            platta.raise(10);
-        }
+            platta.raise(16);
+        } else { platta.raise(0);}
     }
 
 
