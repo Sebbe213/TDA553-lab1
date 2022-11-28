@@ -16,12 +16,12 @@ public abstract class Cars implements Movable {
 
 
 
-    protected Cars(int nrDoors, Color color, double enginePower, String modelName, double xVelocity, double yVelocity){
+    protected Cars(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xVelocity, double yVelocity){
     this.nrDoors = nrDoors;
     this.color = color;
     this.enginePower = enginePower;
     this.modelName = modelName;
-    this.currentSpeed = 10;
+    this.currentSpeed = currentSpeed;
     this.xVelocity = xVelocity;
     this.yVelocity = yVelocity;
 }

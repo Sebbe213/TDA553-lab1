@@ -7,8 +7,8 @@ public class Scania extends Cars {
     Platform platta = new Platform(rear.Level.DOWN,0);
     //ArrayList<Cars> arrayList = new ArrayList<>(5);
 
-    public Scania(int nrDoors, Color color, double enginePower, String modelName, double xVelocity, double yVelocity) {
-        super(2, Color.gray, 90, "Scania Model S", xVelocity, yVelocity);
+    public Scania(int nrDoors, Color color, double enginePower, String modelName,double currentSpeed, double xVelocity, double yVelocity) {
+        super(2, Color.gray, 90, "Scania Model S",0, xVelocity, yVelocity);
 
 
     }

@@ -9,9 +9,9 @@ class ScaniaTest {
 
     @Test
     void raise() {
-        Scania scaniaS = new Scania(2, Color.gray, 90, "Scania Model S", 0,0);
+        Scania scaniaS = new Scania(2, Color.gray, 90, "Scania Model S",0, 0,0);
 
-        scaniaS.currentSpeed = 10;
+        scaniaS.currentSpeed = 0;
         scaniaS.raiseIfStationary();
         assertEquals(10,scaniaS.platta.getAngle());
 
@@ -19,7 +19,7 @@ class ScaniaTest {
 
     @Test
     void lower() {
-        Scania scaniaS = new Scania(2, Color.gray, 90, "Scania Model S", 0,0);
+        Scania scaniaS = new Scania(2, Color.gray, 90, "Scania Model S", 10,0,0);
 
         scaniaS.currentSpeed = 0;
         scaniaS.lowerIfStationary();
