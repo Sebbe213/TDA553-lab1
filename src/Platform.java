@@ -18,11 +18,11 @@ public class Platform implements iPlatformInterface, rear {
         if (angel > 0 && angel < 70) {
             if (angel - amount < 0) {
                 angel = 0;
-            } else {
+            }
+        } else {
                 angel -= amount;
             }
         }
-    }
 
     public void raise(double amount) {
         if (angel == 70) {
@@ -32,11 +32,11 @@ public class Platform implements iPlatformInterface, rear {
         if (angel < 70 && angel > 0) {
             if (angel + amount > 70) {
                 angel = 70;
-            } else {
-                angel += amount;
+            }
+        } else {angel += amount;
             }
         }
-    }
+
 
     protected double getAngle() {
         return angel;
