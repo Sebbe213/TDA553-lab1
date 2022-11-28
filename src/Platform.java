@@ -18,7 +18,7 @@ public class Platform implements iPlatformInterface, rear {
         if (angel > 0 && angel < 70) {
             if (angel - amount < 0) {
                 angel = 0;
-            }
+            } else { angel -= amount;}
         } else {
                 angel -= amount;
             }
@@ -32,7 +32,7 @@ public class Platform implements iPlatformInterface, rear {
         if (angel < 70 && angel > 0) {
             if (angel + amount > 70) {
                 angel = 70;
-            }
+            } else { angel -= amount;}
         } else {angel += amount;
             }
         }
