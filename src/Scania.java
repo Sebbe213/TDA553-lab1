@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Scania extends Cars {
 
-    Platform platta = new Platform(rear.Level.DOWN,0);
+    Platform platta = new Platform(rear.Level.DOWN,30);
     //ArrayList<Cars> arrayList = new ArrayList<>(5);
 
     public Scania(int nrDoors, Color color, double enginePower, String modelName,double currentSpeed, double xVelocity, double yVelocity) {
@@ -46,8 +46,8 @@ public class Scania extends Cars {
 
     public void lowerIfStationary() {
         if (currentSpeed == 0) {
-            platta.lower(0);
-        } else { platta.raise(0);
+            platta.lower(40);
+        } else { platta.lower(0);
             }
         }
     }

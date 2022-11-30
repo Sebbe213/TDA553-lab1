@@ -37,7 +37,6 @@ public class Platform implements iPlatformInterface, rear {
             }
         }
 
-
     protected double getAngle() {
         return angel;
     }

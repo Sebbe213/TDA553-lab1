@@ -17,7 +17,7 @@ class ScaniaTest {
 
     @Test
     void lower() {
-        Scania scaniaS = new Scania(2, Color.gray, 90, "Scania Model S", 10,0,0);
+        Scania scaniaS = new Scania(2, Color.gray, 90, "Scania Model S", 0,0,0);
 
         scaniaS.lowerIfStationary();
         assertEquals(0,scaniaS.platta.getAngle());
