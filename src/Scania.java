@@ -28,8 +28,6 @@ public class Scania extends Cars {
     @Override
     protected void decrementSpeed(double amount) {
         // TODO Auto-generated method stub
-
-
     }
 
     protected void PlatformOrRamp() {
@@ -45,7 +43,7 @@ public class Scania extends Cars {
 
 
     public void lowerIfStationary() {
-        if (getCurrentSpeed() == 0) {
+        if (currentSpeed == 0) {
             platta.lower(40);
         } else { platta.lower(0);
             }

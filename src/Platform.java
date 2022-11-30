@@ -29,11 +29,12 @@ public class Platform implements iPlatformInterface, rear {
             angel += 0;
             platform = Level.UP;
         }
-        if (angel < 70 && angel > 0) {
+        else if (angel < 70 && angel > 0) {
             if (angel + amount > 70) {
                 angel = 70;
-            } else { angel -= amount;}
-        } else {angel += amount;
+            } else { angel += amount;}
+        }
+        else {angel += amount;
             }
         }
 
