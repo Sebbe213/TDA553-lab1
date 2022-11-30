@@ -51,20 +51,18 @@ public abstract class Cars implements Movable {
         
     }
 
-
-
     public void turnLeft(){
         if (yVelocity == 0){
             if(xVelocity>0) {
                 xVelocity = 0;
                 yVelocity = -1 * currentSpeed;
             }
-                else if (xVelocity<0){
+                else if (xVelocity<0) {
                     xVelocity = 0;
                     xVelocity = 1 * currentSpeed;
             }}
-            else if (xVelocity == 0){
-                if (yVelocity < 0){
+            else if (xVelocity == 0) {
+                if (yVelocity < 0) {
                     xVelocity = -1 *currentSpeed;
                     yVelocity = 0;
                 }
@@ -75,10 +73,10 @@ public abstract class Cars implements Movable {
             }
     }
 
-
     public void move(){
-        xVelocity = currentSpeed;
-        yVelocity = 0;
+
+        //xVelocity = currentSpeed;
+        //yVelocity = 0;
     }
 
 
@@ -134,6 +132,8 @@ public abstract class Cars implements Movable {
     }
 
     protected abstract double speedFactor();
+
+    protected abstract double speedFactor(double amount);
 
     protected void incrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;
