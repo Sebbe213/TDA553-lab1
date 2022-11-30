@@ -1,2 +1,27 @@
-public class transportCar {
+import java.awt.*;
+
+public class transportCar extends Cars {
+    private int maxCapcity;
+
+    Ramp transportCarramp = new Ramp(true);
+    protected transportCar(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xVelocity, double yVelocity,int maxCapcity) {
+        super(nrDoors, color, enginePower, modelName, currentSpeed, xVelocity, yVelocity);
+        int maxCapacity = maxCapcity;
+
+    }
+
+    @Override
+    protected double speedFactor(double amount) {
+        return 0;
+    }
+
+    @Override
+    protected void incrementSpeed(double amount) {
+
+    }
+
+    @Override
+    protected void decrementSpeed(double amount) {
+
+    }
 }
