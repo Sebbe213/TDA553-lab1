@@ -16,24 +16,11 @@ public class Volvo240 extends Cars{
 
     @Override
     protected double speedFactor() {
-        if (getCurrentSpeed() == enginePower) {
-            return 0;
-        }
-        else if (getCurrentSpeed() > 0 || getCurrentSpeed()  < enginePower) {
+        if (getCurrentSpeed() > 0 || getCurrentSpeed()  < enginePower) {
             return enginePower * 0.01 * trimFactor;
         }
-
-        else if (getCurrentSpeed()  == 0) {
-                return 0;
-        }
-            else if (getCurrentSpeed()  < 0) {
-                return 0;
-            }
-            return -1;
-        }
-
-   
-    
+        return -1;
+    }
 }
 
 // comment to test the commit

@@ -133,7 +133,19 @@ public abstract class Cars implements Movable {
         currentSpeed = 0;
     }
 
-    protected abstract double speedFactor();
+    protected double speedFactor() {
+        if (getCurrentSpeed() == enginePower) {
+            return 0;
+        }
+        else if (getCurrentSpeed() == 0) {
+            return 0;
+        }
+        else if (getCurrentSpeed() < 0) {
+            return 0;
+        }
+        return -1;
+    }
+
 
     protected void incrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;

@@ -25,23 +25,13 @@ public class Saab95 extends Cars{
 
     @Override
     protected double speedFactor() {
-        if (getCurrentSpeed() == enginePower) {
-            return 0;
-        }
-        else if (getCurrentSpeed() > 0 || getCurrentSpeed() < enginePower) {
+        if (getCurrentSpeed() > 0 || getCurrentSpeed() < enginePower) {
             double turbo = 1;
             if (turboOn) turbo = 1.3;
             return enginePower * 0.01 * turbo;
-        }
-        else if (getCurrentSpeed() == 0) {
-            return 0;
-        }
-        else if (getCurrentSpeed() < 0) {
-            return 0;
+
         }
         return -1;
     }
-
-
 }
 //speed is strong
