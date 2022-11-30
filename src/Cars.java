@@ -6,7 +6,7 @@ public abstract class Cars implements Movable {
     protected Color color;  
     protected double enginePower; 
     protected String modelName; 
-    protected double currentSpeed;
+    private double currentSpeed;
     protected double xVelocity;
     protected double yVelocity;
 
@@ -113,7 +113,7 @@ public abstract class Cars implements Movable {
         return enginePower;
     }
 
-    protected double getCurrentSpeed(){
+    public double getCurrentSpeed(){
         return currentSpeed;
     }
 
@@ -133,21 +133,25 @@ public abstract class Cars implements Movable {
         currentSpeed = 0;
     }
 
-    protected abstract double speedFactor(double amount);
+    protected abstract double speedFactor();
 
-    protected abstract void incrementSpeed(double amount);
-
-    protected abstract void decrementSpeed(double amount);
+    protected void incrementSpeed(double amount){
+        currentSpeed = getCurrentSpeed() + speedFactor() * amount;
+    }
+   
+    protected void decrementSpeed(double amount){
+        currentSpeed = getCurrentSpeed() - speedFactor() * amount;
+    }
 
     protected void gas(double amount) {
         if (0 <= amount || amount <= 1) {
             incrementSpeed(amount);
-        } else {incrementSpeed(0);}
+        } 
     }
     protected void brake(double amount) {
         if (0 <= amount || amount <= 1) {
             decrementSpeed(amount);
-        } else {decrementSpeed(0);}
+        } 
     }
 }
 

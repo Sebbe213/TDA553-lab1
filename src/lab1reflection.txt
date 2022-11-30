@@ -1,5 +1,5 @@
 1. Vi har skapat en ny fil där vi har "bosatt" vår superklass med alla gemensamma attribut och metoder mellan Saab och Volvo. 
-Metoderan och attributen har är av typen protected så att de endast kan ändras av subklasserna.  
+Metoderan och attributen har är av typen protected så att de endast kan ändras av subklasserna och alla klasser i samma package.  
 Efter detta tog vi bort de gemensamma attributen och metoderna  från subklasserna  för att undvika redundans i koden.
 
 Vi har två olika typer av metoder där de ena har vi overridat för att ha en egen implementation i respektive subklass, och de andra metoderna är ärvda precis så som de är.

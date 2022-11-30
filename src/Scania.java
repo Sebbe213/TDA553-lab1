@@ -14,7 +14,7 @@ public class Scania extends Cars {
     }
 
     @Override
-    protected double speedFactor(double amount) {
+    protected double speedFactor() {
         // TODO Auto-generated method stub
         return 0;
     }
@@ -37,7 +37,7 @@ public class Scania extends Cars {
     }
 
     public void raiseIfStationary() {
-        if (currentSpeed == 0) {
+        if (getCurrentSpeed() == 0) {
             platta.raise(16);
         } else { platta.raise(0);
         }
@@ -45,7 +45,7 @@ public class Scania extends Cars {
 
 
     public void lowerIfStationary() {
-        if (currentSpeed == 0) {
+        if (getCurrentSpeed() == 0) {
             platta.lower(40);
         } else { platta.lower(0);
             }

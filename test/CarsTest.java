@@ -4,11 +4,11 @@ import java.awt.*;
 
 import org.junit.jupiter.api.Test;
 
-public class Saab95Test {
+public class CarsTest {
     @Test
     public void speedFactorTest() {
         Saab95 saab = new Saab95(2, Color.WHITE, 125, "Saab95", 10,0.1, 10);
-        assertEquals(1.625, saab.speedFactor(20));
+        assertEquals(1.625, saab.speedFactor());
     }
 
 
