@@ -1,11 +1,11 @@
 import java.awt.*;
 
 public abstract class Cars implements Movable {
-   
+
     protected int nrDoors;
-    protected Color color;  
-    protected double enginePower; 
-    protected String modelName; 
+    protected Color color;
+    protected double enginePower;
+    protected String modelName;
     private double currentSpeed;
     protected double xVelocity;
     protected double yVelocity;
@@ -17,14 +17,14 @@ public abstract class Cars implements Movable {
 
 
     protected Cars(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xVelocity, double yVelocity){
-    this.nrDoors = nrDoors;
-    this.color = color;
-    this.enginePower = enginePower;
-    this.modelName = modelName;
-    this.currentSpeed = currentSpeed;
-    this.xVelocity = xVelocity;
-    this.yVelocity = yVelocity;
-}
+        this.nrDoors = nrDoors;
+        this.color = color;
+        this.enginePower = enginePower;
+        this.modelName = modelName;
+        this.currentSpeed = currentSpeed;
+        this.xVelocity = xVelocity;
+        this.yVelocity = yVelocity;
+    }
 
     public void turnRight(){
         if (yVelocity == 0) {
@@ -46,10 +46,12 @@ public abstract class Cars implements Movable {
                 xVelocity = -1 * currentSpeed;
                 yVelocity = 0;
             }
-            
+
         }
-        
+
     }
+
+
 
     public void turnLeft(){
         if (yVelocity == 0){
@@ -57,45 +59,45 @@ public abstract class Cars implements Movable {
                 xVelocity = 0;
                 yVelocity = -1 * currentSpeed;
             }
-                else if (xVelocity<0) {
-                    xVelocity = 0;
-                    xVelocity = 1 * currentSpeed;
+            else if (xVelocity<0){
+                xVelocity = 0;
+                xVelocity = 1 * currentSpeed;
             }}
-            else if (xVelocity == 0) {
-                if (yVelocity < 0) {
-                    xVelocity = -1 *currentSpeed;
-                    yVelocity = 0;
-                }
-                else if (yVelocity > 0){
-                    xVelocity = 1 * currentSpeed;
-                    yVelocity = 0;
-                }
+        else if (xVelocity == 0){
+            if (yVelocity < 0){
+                xVelocity = -1 *currentSpeed;
+                yVelocity = 0;
             }
+            else if (yVelocity > 0){
+                xVelocity = 1 * currentSpeed;
+                yVelocity = 0;
+            }
+        }
     }
 
-    public void move(){
 
-        //xVelocity = currentSpeed;
-        //yVelocity = 0;
+    public void move(){
+        xVelocity = currentSpeed;
+        yVelocity = 0;
     }
 
 
     protected void setxCoordination() {
-    xCoordination += xVelocity;
+        xCoordination += xVelocity;
     }
 
     protected double getxCoordination() {
-    return xCoordination;
+        return xCoordination;
     }
 
     protected void setyCoordination() {
-    yCoordination += yVelocity;
+        yCoordination += yVelocity;
     }
 
     protected double getyCoordination() {
         return yCoordination;
     }
-//______________________________________________________//
+    //______________________________________________________//
     protected double getxVelocity() {
         return xVelocity;
     }
@@ -124,7 +126,7 @@ public abstract class Cars implements Movable {
     }
 
     protected void startEngine(){
-       currentSpeed = 0.1;
+        currentSpeed = 0.1;
     }
 
     protected void stopEngine(){
@@ -133,12 +135,10 @@ public abstract class Cars implements Movable {
 
     protected abstract double speedFactor();
 
-    protected abstract double speedFactor(double amount);
-
     protected void incrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;
     }
-   
+
     protected void decrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
     }
@@ -146,15 +146,13 @@ public abstract class Cars implements Movable {
     protected void gas(double amount) {
         if (0 <= amount || amount <= 1) {
             incrementSpeed(amount);
-        } 
+        }
     }
     protected void brake(double amount) {
         if (0 <= amount || amount <= 1) {
             decrementSpeed(amount);
-        } 
+        }
     }
 }
 
 // comment to test the commit
-
-

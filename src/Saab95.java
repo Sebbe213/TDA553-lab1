@@ -6,49 +6,42 @@ public class Saab95 extends Cars{
 
     public boolean turboOn;
 
+
     public Saab95(int nrDoors, Color color, double enginePower, String modelName,double currentSpeed, double xVelocity, double yVelocity)
     {super(2, Color.red, 125, "Saab95",10,xVelocity,yVelocity);
-    //stopEngine();
-    //startEngine();
-    turboOn = true;
+        //stopEngine();
+        //startEngine();
+        turboOn = true;
     }
-    
-    
+
+
     public void setTurboOn(){
-	    turboOn = true;
+        turboOn = true;
     }
 
     public void setTurboOff(){
-	    turboOn = false;
+        turboOn = false;
     }
 
     @Override
-	protected double speedFactor() {
-        if (currentSpeed == enginePower) {
+    protected double speedFactor() {
+        if (getCurrentSpeed() == enginePower) {
             return 0;
         }
-        else if (currentSpeed > 0 || currentSpeed < enginePower) {
+        else if (getCurrentSpeed() > 0 || getCurrentSpeed() < enginePower) {
             double turbo = 1;
             if (turboOn) turbo = 1.3;
             return enginePower * 0.01 * turbo;
         }
-        else if (currentSpeed == 0) {
+        else if (getCurrentSpeed() == 0) {
             return 0;
         }
-        else if (currentSpeed < 0) {
-            currentSpeed = 0;
+        else if (getCurrentSpeed() < 0) {
             return 0;
         }
         return -1;
     }
 
-    @Override
-    public void incrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() + speedFactor(amount) * amount;
-    }
-    @Override
-    public void decrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() - speedFactor(amount) * amount;
-    }
+
 }
 //speed is strong
