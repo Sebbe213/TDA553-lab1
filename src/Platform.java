@@ -15,7 +15,7 @@ public class Platform implements iPlatformInterface, rear {
             angel -= 0;
             platform = Level.DOWN;
         }
-        if (angel > 0 && angel < 70) {
+        else if (angel > 0 && angel < 70) {
             if (angel - amount < 0) {
                 angel = 0;
             } else { angel -= amount;}
