@@ -44,3 +44,4 @@ public class Saab95 extends Cars{
 
   
 }
+//speed is strong
