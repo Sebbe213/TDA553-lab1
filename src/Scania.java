@@ -43,7 +43,7 @@ public class Scania extends Cars {
 
 
     public void lowerIfStationary() {
-        if (currentSpeed == 0) {
+        if (getCurrentSpeed() == 0) {
             platta.lower(40);
         } else { platta.lower(0);
             }

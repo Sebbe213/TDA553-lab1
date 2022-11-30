@@ -11,7 +11,7 @@ public class transportCar extends Cars {
     }
 
     @Override
-    protected double speedFactor(double amount) {
+    protected double speedFactor() {
         return 0;
     }
 
