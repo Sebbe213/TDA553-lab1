@@ -2,7 +2,7 @@ import java.awt.*;
 
 //import Cars;
 
-public class Saab95 extends Cars{
+public class Saab95 extends Car{
 
     public boolean turboOn;
 

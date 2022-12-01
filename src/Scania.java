@@ -2,7 +2,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Scania extends Cars {
+public class Scania extends Car {
 
     Platform platta = new Platform(rear.Level.DOWN,30);
     //ArrayList<Cars> arrayList = new ArrayList<>(5);

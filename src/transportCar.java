@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class transportCar extends Cars {
+public class transportCar extends Car {
     private int maxCapcity;
 
     Ramp transportCarramp = new Ramp(true);

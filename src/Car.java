@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public abstract class Cars implements Movable {
+public abstract class Car implements Movable {
 
     protected int nrDoors;
     protected Color color;
@@ -15,8 +15,7 @@ public abstract class Cars implements Movable {
     protected double yCoordination;
 
 
-
-    protected Cars(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xVelocity, double yVelocity){
+    protected Car(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xVelocity, double yVelocity){
         this.nrDoors = nrDoors;
         this.color = color;
         this.enginePower = enginePower;
@@ -26,7 +25,7 @@ public abstract class Cars implements Movable {
         this.yVelocity = yVelocity;
     }
 
-    public void turnRight(){
+    public void turnRight() {
         if (yVelocity == 0) {
             if (xVelocity > 0) {
                 xVelocity = 0;
@@ -38,7 +37,7 @@ public abstract class Cars implements Movable {
             }
         }
         else if (xVelocity == 0){
-            if (yVelocity < 0){
+            if (yVelocity < 0) {
                 xVelocity = 1 * currentSpeed;
                 yVelocity = 0;
             }
@@ -50,8 +49,6 @@ public abstract class Cars implements Movable {
         }
 
     }
-
-
 
     public void turnLeft(){
         if (yVelocity == 0){
@@ -68,17 +65,16 @@ public abstract class Cars implements Movable {
                 xVelocity = -1 *currentSpeed;
                 yVelocity = 0;
             }
-            else if (yVelocity > 0){
+            else if (yVelocity > 0) {
                 xVelocity = 1 * currentSpeed;
                 yVelocity = 0;
             }
         }
     }
 
-
     public void move(){
-        xVelocity = currentSpeed;
-        yVelocity = 0;
+        setxCoordination();
+        setyCoordination();
     }
 
 
@@ -104,7 +100,7 @@ public abstract class Cars implements Movable {
     protected double getyVelocity() {
         return yVelocity;
     }
-//______________________________________________________//
+  //______________________________________________________//
 
     protected int getNrDoors(){
         return nrDoors;

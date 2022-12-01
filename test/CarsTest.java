@@ -59,4 +59,18 @@ public class CarsTest {
         saab.brake(0.5);
         assertEquals(9.1875, saab.getCurrentSpeed());
     }
+
+    @Test
+    void moveXTest() {
+        Saab95 saab = new Saab95(4, Color.WHITE, 125, "Saab404", 10,10, 0);
+        saab.move();
+        assertEquals(10,saab.getxCoordination());
+    }
+
+    @Test
+    void moveYTest() {
+        Saab95 saab = new Saab95(4, Color.WHITE, 125, "Saab404", 10,10, 0);
+        saab.move();
+        assertEquals(0,saab.getyCoordination());
+    }
 }
