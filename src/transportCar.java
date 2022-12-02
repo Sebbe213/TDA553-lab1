@@ -57,7 +57,6 @@ public class transportCar extends Car {
     }
 
 
-
     protected void lowerRamp() {
         if (this.getCurrentSpeed() == 0) {
             transportCarramp.setRampDown();
@@ -71,19 +70,11 @@ public class transportCar extends Car {
     }
 
     protected boolean xCoordinationChecker(Car car) {
-        if (car.getxCoordination() - 20 <= this.getxCoordination() || car.getxCoordination() + 20 >= this.getxCoordination()) {
-            return true;
-        }
-        else {return false;}
-        // return car.getxCoordination() - 20 <= this.getxCoordination() || car.getxCoordination() + 20 >= this.getxCoordination();
+        return car.getxCoordination() - 20 <= this.getxCoordination() || car.getxCoordination() + 20 >= this.getxCoordination();
     }
 
     protected boolean yCoordinationChecker(Car car) {
-        if (car.getyCoordination() - 20 <= this.getyCoordination() || car.getyCoordination() + 20 >= this.getyCoordination()) {
-            return true;
-        }
-        else {return false;}
-        // return car.getyCoordination() - 20 <= this.getyCoordination() || car.getyCoordination() + 20 >= this.getyCoordination();
+        return car.getyCoordination() - 20 <= this.getyCoordination() || car.getyCoordination() + 20 >= this.getyCoordination();
     }
     protected void updateNrOfAvailableSlots() {
         nrOfAvailableSlots = maxCapcity - loadedCarList.size();

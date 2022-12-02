@@ -1,44 +1,44 @@
 
 public class Platform implements iPlatformInterface, rear {
-    protected double angel;
+    protected double angle;
     rear.Level platform;
 
 
 
     protected Platform(rear.Level platform, double angel) {
         this.platform = platform;
-        this.angel = angel;
+        this.angle = angel;
     }
 
     public void lower(double amount) {
-        if (angel == 0) {
-            angel -= 0;
+        if (angle == 0) {
+            angle -= 0;
             platform = Level.DOWN;
         }
-        else if (angel > 0 && angel < 70) {
-            if (angel - amount < 0) {
-                angel = 0;
-            } else { angel -= amount;}
+        else if (angle > 0 && angle < 70) {
+            if (angle - amount < 0) {
+                angle = 0;
+            } else { angle -= amount;}
         } else {
-                angel -= amount;
+                angle -= amount;
             }
         }
 
     public void raise(double amount) {
-        if (angel == 70) {
-            angel += 0;
+        if (angle == 70) {
+            angle += 0;
             platform = Level.UP;
         }
-        else if (angel < 70 && angel > 0) {
-            if (angel + amount > 70) {
-                angel = 70;
-            } else { angel += amount;}
+        else if (angle < 70 && angle > 0) {
+            if (angle + amount > 70) {
+                angle = 70;
+            } else { angle += amount;}
         }
-        else {angel += amount;
+        else {angle += amount;
             }
         }
 
     protected double getAngle() {
-        return angel;
+        return angle;
     }
 }
