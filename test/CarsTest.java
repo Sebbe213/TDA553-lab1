@@ -32,16 +32,20 @@ public class CarsTest {
     @Test
     public void turnRightTest() {
         Saab95 saab = new Saab95(2, Color.WHITE, 125, "Saab95", 10,10, 0);
+        saab.setX(0);
+        saab.setY(0);
+
         saab.turnRight();
-        saab.setxCoordination();
         assertEquals(0, saab.getxCoordination());
+        assertEquals(10,saab.getyCoordination());
     }
 
     @Test
     public void turnLeftTest() {
         Saab95 saab = new Saab95(4, Color.WHITE, 125, "Saab404", 10,0, 10);
+        saab.setY(0);
+
         saab.turnLeft();
-        saab.setyCoordination();
         assertEquals(0, saab.getyCoordination());
 
     }
