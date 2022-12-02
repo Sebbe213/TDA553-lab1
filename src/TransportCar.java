@@ -34,7 +34,7 @@ public class transportCar extends Car {
 
     protected void loadOn(Car car) {
         if (xCoordinationChecker(car) && yCoordinationChecker(car)
-                && loadedCarList.size() <= getNrOfAvailableSlots() && transportCarramp.ramp == rear.Level.DOWN) {
+                && loadedCarList.size() <= getNrOfAvailableSlots() && !transportCarramp.rampen) {
             loadedCarList.add(car);
         } else {
             System.out.println("The car chosen to be loaded is too far away from the transport car, get a bit closer");
@@ -44,7 +44,7 @@ public class transportCar extends Car {
 
     protected void loadOff(Car car) {
         if (loadedCarList.size() > 0) {
-            if (this.getCurrentSpeed() == 0 && transportCarramp.ramp == rear.Level.DOWN) {
+            if (this.getCurrentSpeed() == 0 && !transportCarramp.rampen) {
                 int lastLoadedCar = loadedCarList.size() - 1;
                 loadedCarList.remove(lastLoadedCar);
             } else {
