@@ -1,5 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +8,7 @@ public class transportCar extends Car {
     protected List<Car> loadedCarList = new ArrayList<Car>();
 
     private int maxCapcity;
-    private int nrOfCarsToLoad;
-    private int closnesIntervall;
-
     private int nrOfLoadedCars;
-
     private int nrOfAvailableSlots;
 
 
@@ -22,7 +16,7 @@ public class transportCar extends Car {
 
     protected transportCar(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xVelocity, double yVelocity, int maxCapcity) {
         super(nrDoors, color, enginePower, modelName, currentSpeed, xVelocity, yVelocity);
-        int maxCapacity = maxCapcity;
+        this.maxCapcity = maxCapcity;
 
     }
 
@@ -40,21 +34,19 @@ public class transportCar extends Car {
     }
 
     protected void loadOn(Car car) {
-        if (xCoordinationChecker(car) && yCoordinationChecker(car)) {
-            nrOfAvailableSlots -= nrOfCarsToLoad;
+        if (xCoordinationChecker(car) && yCoordinationChecker(car) && loadedCarList.size() <= getNrOfAvailableSlots()) {
             loadedCarList.add(car);
         } else {
-            System.out.println("Du e för långt bort din jävel");
-    }
+            System.out.println("The car chosen to be loaded is too far away from the transport car, get a bit closer");
+        }
+        setNrOfAvailableSlots();
+
     }
 
-    protected void loadOff(Car car) {
+    protected void loadOff() {
         int lastLoadedCar = loadedCarList.size() -1;
         loadedCarList.remove(lastLoadedCar);
-    }
-
-    protected int getLoadedCars() {
-        return nrOfCarsToLoad;
+        setNrOfAvailableSlots();
     }
 
     protected boolean xCoordinationChecker(Car car) {
@@ -62,6 +54,7 @@ public class transportCar extends Car {
             return true;
         }
         else {return false;}
+        // return car.getxCoordination() - 20 <= this.getxCoordination() || car.getxCoordination() + 20 >= this.getxCoordination();
     }
 
     protected boolean yCoordinationChecker(Car car) {
@@ -69,14 +62,14 @@ public class transportCar extends Car {
             return true;
         }
         else {return false;}
+        // return car.getyCoordination() - 20 <= this.getyCoordination() || car.getyCoordination() + 20 >= this.getyCoordination();
     }
-
+    protected void setNrOfAvailableSlots() {
+        nrOfAvailableSlots = maxCapcity - loadedCarList.size();
+    }
 
     protected int getNrOfAvailableSlots() {
         return nrOfAvailableSlots;
     }
 
-    protected void setNrOfAvailableSlots() {
-        nrOfAvailableSlots -= nrOfLoadedCars;
-    }
 }
