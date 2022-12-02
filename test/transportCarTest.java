@@ -25,5 +25,7 @@ class transportCarTest {
         
         assertEquals(null, null);
 
+        // Hej
+
     }
 }
