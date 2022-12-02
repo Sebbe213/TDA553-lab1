@@ -33,7 +33,7 @@ public class transportCar extends Car {
     }
 
     protected void loadOn(Car car) {
-        if (this.getCurrentSpeed() == 0 && xCoordinationChecker(car) && yCoordinationChecker(car)
+        if (xCoordinationChecker(car) && yCoordinationChecker(car)
                 && loadedCarList.size() <= getNrOfAvailableSlots() && !transportCarramp.rampen) {
             loadedCarList.add(car);
         } else {
@@ -43,13 +43,31 @@ public class transportCar extends Car {
     }
 
     protected void loadOff(Car car) {
-        if (this.getCurrentSpeed() == 0 && !transportCarramp.rampen) {
-            int lastLoadedCar = loadedCarList.size() - 1;
-            loadedCarList.remove(lastLoadedCar);
+        if (loadedCarList.size() > 0) {
+            if (this.getCurrentSpeed() == 0 && !transportCarramp.rampen) {
+                int lastLoadedCar = loadedCarList.size() - 1;
+                loadedCarList.remove(lastLoadedCar);
+            } else {
+                System.out.println("There are no cars to load off");
         }
         updateNrOfAvailableSlots();
         car.setX(car.getxCoordination() + 10);
-        car.setY(car.getxCoordination() +10);
+        car.setY(car.getxCoordination() + 10);
+        }
+    }
+
+
+
+    protected void lowerRamp() {
+        if (this.getCurrentSpeed() == 0) {
+            transportCarramp.setRampDown();
+        }
+    }
+
+    protected void raiseRamp() {
+        if (this.getCurrentSpeed() == 0) {
+            transportCarramp.setRampUp();
+        }
     }
 
     protected boolean xCoordinationChecker(Car car) {

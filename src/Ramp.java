@@ -6,14 +6,11 @@ public class Ramp implements rear {
         this.rampen = true;
     }
     protected void setRampUp() {
-        if (rampen) {
             ramp = Level.UP;
-        }
+
     }
     protected void setRampDown() {
-        if (!rampen) {
             ramp = Level.DOWN;
-        }
     }
     protected void getRampTrue() {
         setRampUp();
