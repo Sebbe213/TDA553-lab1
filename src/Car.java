@@ -10,7 +10,7 @@ public abstract class Car implements Movable {
     protected double xVelocity;
     protected double yVelocity;
 
-    protected double xCoordination;
+    private double xCoordination;
 
     protected double yCoordination;
 
