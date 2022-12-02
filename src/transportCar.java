@@ -8,7 +8,6 @@ public class transportCar extends Car {
     protected List<Car> loadedCarList = new ArrayList<Car>();
 
     private int maxCapcity;
-    private int nrOfLoadedCars;
     private int nrOfAvailableSlots;
 
 
