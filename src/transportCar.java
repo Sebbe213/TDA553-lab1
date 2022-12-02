@@ -33,19 +33,23 @@ public class transportCar extends Car {
     }
 
     protected void loadOn(Car car) {
-        if (xCoordinationChecker(car) && yCoordinationChecker(car) && loadedCarList.size() <= getNrOfAvailableSlots()) {
+        if (this.getCurrentSpeed() == 0 && xCoordinationChecker(car) && yCoordinationChecker(car)
+                && loadedCarList.size() <= getNrOfAvailableSlots() && !transportCarramp.rampen) {
             loadedCarList.add(car);
         } else {
             System.out.println("The car chosen to be loaded is too far away from the transport car, get a bit closer");
         }
-        setNrOfAvailableSlots();
-
+        updateNrOfAvailableSlots();
     }
 
-    protected void loadOff() {
-        int lastLoadedCar = loadedCarList.size() -1;
-        loadedCarList.remove(lastLoadedCar);
-        setNrOfAvailableSlots();
+    protected void loadOff(Car car) {
+        if (this.getCurrentSpeed() == 0 && !transportCarramp.rampen) {
+            int lastLoadedCar = loadedCarList.size() - 1;
+            loadedCarList.remove(lastLoadedCar);
+        }
+        updateNrOfAvailableSlots();
+        car.setX(car.getxCoordination() + 10);
+        car.setY(car.getxCoordination() +10);
     }
 
     protected boolean xCoordinationChecker(Car car) {
@@ -63,7 +67,7 @@ public class transportCar extends Car {
         else {return false;}
         // return car.getyCoordination() - 20 <= this.getyCoordination() || car.getyCoordination() + 20 >= this.getyCoordination();
     }
-    protected void setNrOfAvailableSlots() {
+    protected void updateNrOfAvailableSlots() {
         nrOfAvailableSlots = maxCapcity - loadedCarList.size();
     }
 

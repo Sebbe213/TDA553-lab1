@@ -73,12 +73,19 @@ public abstract class Car implements Movable {
     }
 
     public void move(){
-        setxCoordination();
-        setyCoordination();
+        updatexCoordination();
+        updateyCoordination();
     }
 
+    public void setX(double x){
+        this.xCoordination = x;
+    }
 
-    protected void setxCoordination() {
+    public void setY(double y){
+        this.yCoordination = y;
+    }
+
+    protected void updatexCoordination() {
         xCoordination += xVelocity;
     }
 
@@ -86,7 +93,7 @@ public abstract class Car implements Movable {
         return xCoordination;
     }
 
-    protected void setyCoordination() {
+    protected void updateyCoordination() {
         yCoordination += yVelocity;
     }
 
