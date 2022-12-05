@@ -1,52 +1,37 @@
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Scania extends Car {
 
-    Platform platta = new Platform(rear.Level.DOWN,30);
-    //ArrayList<Cars> arrayList = new ArrayList<>(5);
+    Platform platta = new Platform(rear.Level.DOWN, 0);
 
-    public Scania(int nrDoors, Color color, double enginePower, String modelName,double currentSpeed, double xVelocity, double yVelocity) {
-        super(2, Color.gray, 90, "Scania Model S",currentSpeed, xVelocity, yVelocity);
+    public Scania(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xVelocity,
+            double yVelocity) {
+        super(2, Color.gray, 90, "Scania Model S", currentSpeed, xVelocity, yVelocity);
 
-
-    }
-
-    @Override
-    protected double speedFactor() {
-        // TODO Auto-generated method stub
-        return 0;
     }
 
     @Override
     protected void incrementSpeed(double amount) {
-        // TODO Auto-generated method stub
+        if (platta.platform == rear.Level.DOWN) {
+            super.incrementSpeed(amount);
 
-    }
-
-    @Override
-    protected void decrementSpeed(double amount) {
-        // TODO Auto-generated method stub
-    }
-
-    protected void PlatformOrRamp() {
-
-    }
-
-    public void raiseIfStationary() {
-        if (this.getCurrentSpeed() == 0) {
-            platta.raise(16);
-        } else { platta.raise(0);
         }
     }
 
-
-    public void lowerIfStationary() {
+    public void raisePlatform(double amount) {
         if (this.getCurrentSpeed() == 0) {
-            platta.lower(40);
-        } else { platta.lower(0);
-            }
+            platta.raise(amount); 
+        } else {
+            platta.raise(0);
         }
     }
 
+    public void lowerPlatform(double amount) {
+        if (this.getCurrentSpeed() == 0) {
+            platta.lower(amount); 
+        } else {
+            platta.lower(0);
+        }
+    }
+}
