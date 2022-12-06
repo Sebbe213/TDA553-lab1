@@ -55,7 +55,5 @@ class ScaniaTest {
         scaniaS.raisePlatform(20);
         scaniaS.incrementSpeed(2);
         assertEquals(0.1, scaniaS.getCurrentSpeed());
-
- 
     }
 }
