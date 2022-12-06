@@ -12,7 +12,10 @@ public abstract class Car implements Movable {
 
     private double xCoordination;
 
+
     protected double yCoordination;
+    protected boolean EngineStart;
+
 
     protected Car(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xVelocity,
             double yVelocity) {
@@ -23,7 +26,15 @@ public abstract class Car implements Movable {
         this.currentSpeed = currentSpeed;
         this.xVelocity = xVelocity;
         this.yVelocity = yVelocity;
+       boolean EngineStart;
     }
+
+    public boolean startEngine() {
+        return EngineStart;
+    }
+
+
+
 
     public void turnRight() {
         if (yVelocity == 0) {
@@ -68,8 +79,10 @@ public abstract class Car implements Movable {
     }
 
     public void move() {
-        updatexCoordination();
-        updateyCoordination();
+        if (EngineStart) {
+            updatexCoordination();
+            updateyCoordination();
+        }
     }
 
     public void setX(double x) {
