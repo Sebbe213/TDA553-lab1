@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * modifying the model state and the updating the view.
  */
 // Hej på er nnnnnnnn hejhejehejeh
-public class CarControllerrr {
+public class CarController {
     // member fields:
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
