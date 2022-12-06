@@ -42,24 +42,9 @@ public class TransportCar extends Car {
                 System.out.println("The car can not be loaded, check car position, capacity or ramp level.");
             }
         }
-        /*
-        if (xCoordinationChecker(car) && yCoordinationChecker(car)
-                && loadedCarList.size() <= maxCapacity && transportCarramp.ramp == rear.Level.DOWN) {
-            loadedCarList.add(car);
-            car.setX(this.getxCoordination());
-            car.setY(this.getyCoordination());
-        } else {
-            System.out.println("The car can not be loaded, check car position, capacity or ramp level.");
-        }
-    }
-    */
     }
 
     protected void loadOff() {
-        /*
-        }
-        if (
-    */
         if (this.getCurrentSpeed() == 0 && transportCarramp.ramp == rear.Level.DOWN) {
             try {
                 superTool.loadOff();
@@ -82,17 +67,5 @@ public class TransportCar extends Car {
             transportCarramp.setRampUp();
         }
     }
-
-    /*protected boolean xCoordinationChecker(Car car) {
-        return car.getxCoordination() - 20 <= this.getxCoordination()
-                || car.getxCoordination() + 20 >= this.getxCoordination();
-    }
-
-    protected boolean yCoordinationChecker(Car car) {
-        return car.getyCoordination() - 20 <= this.getyCoordination()
-                || car.getyCoordination() + 20 >= this.getyCoordination();
-    }
-    */
-
 }
 

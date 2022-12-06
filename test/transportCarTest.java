@@ -29,8 +29,4 @@ class transportCarTest {
         transportCar.loadOff();
         assertEquals(1, transportCar.getNumberOfLoadedCars() );
     }
-    
-   
-
-    
 }
