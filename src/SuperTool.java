@@ -56,5 +56,4 @@ public class SuperTool {
         return xCoordination;
     }
 
-// commit
 }

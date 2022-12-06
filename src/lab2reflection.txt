@@ -1,0 +1,16 @@
+Vi har en typ som kallas för Car. I Car har vi implementerat Gas och break metoderna .
+Kontraktet som vi har skapat för dessa metoder är att:
+"Om gas metoden initieras bör den kalla på metoden incrementspeed och enbart öka currentspeed med en given amount.
+Om break metoden initieras bör den kalla på metoden decrementspeed och enbart minska currentspeed med given amount.
+I Volvo och Scania följs kontraktet ovan då båda klasserna ärver från Car och tester har utförts.
+
+Vår design försäkrar att subtyperna bland annat Saab, Volvo och Scania beter sig på exakt samma sätt som deras supertyp i enlighet med kontraktets specifikation, och därmed följer designen
+Liskov susbtitution pirnciple.
+
+Det största problemet vi hade vad gäller duplicering av kod var mellan transport car och repair shop. Där används exakt samma metoder för att lasta av och på samt parkera in och ut bilarna. Det var inte möjligt
+att ärva metoderna från en annan klass då de redan ärvde från Car. Därför skapades en ny klass, supertool som har den gemensamma implementationen.
+Med hjälp av delegation delegerade vi metoderna till både transport car och repair shop. Där implementerades endast skillnaden med koordinater och exceptions,
+Det vill säga att koordinaterna för repair shop och transport car gavs som parametrar i supertool när den delegerades.
+
+Den enda ändringen som utfördes för att kunna vidareutveckla koden under labb 2 var metoderna increment och decrement-speed, alltså att implementera de i Car för att tillåta nya subtyper
+bland annat scania och transport car att ärva beteendet av superklassen.
