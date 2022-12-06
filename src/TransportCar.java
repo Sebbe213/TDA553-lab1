@@ -1,22 +1,24 @@
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-// hej
-public class transportCar extends Car {
 
+public class TransportCar extends Car {
 
-    protected List<Car> loadedCarList = new ArrayList<Car>();
+    private int loadingCapacity;
 
-    private int maxCapcity;
-    private int nrOfAvailableSlots;
+    private SuperTool superTool;
 
+    private Ramp transportCarramp = new Ramp();
 
-    Ramp transportCarramp = new Ramp(true);
-
-    protected transportCar(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xVelocity, double yVelocity, int maxCapcity) {
+    protected TransportCar(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed,
+            double xVelocity, double yVelocity, int loadingCapacity) {
         super(nrDoors, color, enginePower, modelName, currentSpeed, xVelocity, yVelocity);
-        this.maxCapcity = maxCapcity;
+        this.loadingCapacity = loadingCapacity;
+       this.superTool = new SuperTool(getxCoordination(),getyCoordination(),loadingCapacity);
+    }
 
+    public int getNumberOfLoadedCars() {
+        return superTool.getNumberOfLoadedCars();
     }
 
     @Override
@@ -33,30 +35,41 @@ public class transportCar extends Car {
     }
 
     protected void loadOn(Car car) {
+        if (transportCarramp.ramp == rear.Level.DOWN) {
+            try {
+                superTool.loadOn(car);
+            } catch (Exception e) {
+                System.out.println("The car can not be loaded, check car position, capacity or ramp level.");
+            }
+        }
+        /*
         if (xCoordinationChecker(car) && yCoordinationChecker(car)
-                && loadedCarList.size() <= getNrOfAvailableSlots() && !transportCarramp.rampen) {
+                && loadedCarList.size() <= maxCapacity && transportCarramp.ramp == rear.Level.DOWN) {
             loadedCarList.add(car);
+            car.setX(this.getxCoordination());
+            car.setY(this.getyCoordination());
         } else {
-            System.out.println("The car chosen to be loaded is too far away from the transport car, get a bit closer");
+            System.out.println("The car can not be loaded, check car position, capacity or ramp level.");
         }
-        updateNrOfAvailableSlots();
+    }
+    */
     }
 
-    protected void loadOff(Car car) {
-        if (loadedCarList.size() > 0) {
-            if (this.getCurrentSpeed() == 0 && !transportCarramp.rampen) {
-                int lastLoadedCar = loadedCarList.size() - 1;
-                loadedCarList.remove(lastLoadedCar);
-            } else {
+    protected void loadOff() {
+        /*
+        }
+        if (
+    */
+        if (this.getCurrentSpeed() == 0 && transportCarramp.ramp == rear.Level.DOWN) {
+            try {
+                superTool.loadOff();
+
+            } catch (Exception e) {
+
                 System.out.println("There are no cars to load off");
-        }
-        updateNrOfAvailableSlots();
-        car.setX(car.getxCoordination() + 10);
-        car.setY(car.getxCoordination() + 10);
+            }
         }
     }
-
-
 
     protected void lowerRamp() {
         if (this.getCurrentSpeed() == 0) {
@@ -70,27 +83,16 @@ public class transportCar extends Car {
         }
     }
 
-    protected boolean xCoordinationChecker(Car car) {
-        if (car.getxCoordination() - 20 <= this.getxCoordination() || car.getxCoordination() + 20 >= this.getxCoordination()) {
-            return true;
-        }
-        else {return false;}
-        // return car.getxCoordination() - 20 <= this.getxCoordination() || car.getxCoordination() + 20 >= this.getxCoordination();
+    /*protected boolean xCoordinationChecker(Car car) {
+        return car.getxCoordination() - 20 <= this.getxCoordination()
+                || car.getxCoordination() + 20 >= this.getxCoordination();
     }
 
     protected boolean yCoordinationChecker(Car car) {
-        if (car.getyCoordination() - 20 <= this.getyCoordination() || car.getyCoordination() + 20 >= this.getyCoordination()) {
-            return true;
-        }
-        else {return false;}
-        // return car.getyCoordination() - 20 <= this.getyCoordination() || car.getyCoordination() + 20 >= this.getyCoordination();
+        return car.getyCoordination() - 20 <= this.getyCoordination()
+                || car.getyCoordination() + 20 >= this.getyCoordination();
     }
-    protected void updateNrOfAvailableSlots() {
-        nrOfAvailableSlots = maxCapcity - loadedCarList.size();
-    }
-
-    protected int getNrOfAvailableSlots() {
-        return nrOfAvailableSlots;
-    }
+    */
 
 }
+
