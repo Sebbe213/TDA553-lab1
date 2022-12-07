@@ -3,6 +3,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.lang.model.element.Name;
 import javax.swing.*;
 
 // This panel represent the animated part of the view with the car images.
@@ -13,9 +14,11 @@ public class DrawPanel extends JPanel{
     BufferedImage volvoImage;
     BufferedImage scaniaImage;
     BufferedImage saabImage;
+    Car Name;
 
 
     // To keep track of a singel cars position
+
     //Point volvoPoint = new Point();
     //Point scaniaPoint = new Point();
     //Point saabPoint = new Point();
@@ -24,12 +27,12 @@ public class DrawPanel extends JPanel{
 
 
 
-    public void getName(Car car) {
-        //carPoint.
+    public void setCarName(Car car) {
+        Name = car;
     }
-    public String setName() {
-        System.out.println("hej");
-        return "";
+    public Car getCarName() {
+        return Name;
+
     }
 
 
