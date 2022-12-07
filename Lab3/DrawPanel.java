@@ -16,13 +16,20 @@ public class DrawPanel extends JPanel{
 
 
     // To keep track of a singel cars position
-    Point volvoPoint = new Point();
-    Point scaniaPoint = new Point();
-    Point saabPoint = new Point();
+    //Point volvoPoint = new Point();
+    //Point scaniaPoint = new Point();
+    //Point saabPoint = new Point();
+    Point carPoint = new Point();
 
-    public void getName() {
+
+
+
+    public void getName(Car car) {
+        //carPoint.
+    }
+    public String setName() {
         System.out.println("hej");
-
+        return "";
     }
 
 
@@ -30,8 +37,8 @@ public class DrawPanel extends JPanel{
 
     // TODO: Make this genereal for all cars
     void moveit(int x, int y){
-        volvoPoint.x = x;
-        volvoPoint.y = y;
+        carPoint.x = x;
+        carPoint.y = y;
     }
 
     // Initializes the panel and reads the images
