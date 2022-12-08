@@ -20,22 +20,11 @@ public class TransportCar extends Car {
     }
 
     @Override
-    protected double speedFactor() {
-        return 0;
-    }
-
-    @Override
-    protected void incrementSpeed(double amount) {
+    protected double speedFactor() {   // Due to the lack of speed boost such as trim factor/ turbo this method is overriden to increment the speed of transport car objects differently
+        return enginePower * 0.01;
 
     }
 
-    @Override
-    protected void decrementSpeed(double amount) {
-    }
-    @Override
-    public void move() {
-
-    }
     protected void loadOn(Car car) {
         if (transportCarramp.ramp == rear.Level.DOWN) {
             try {
