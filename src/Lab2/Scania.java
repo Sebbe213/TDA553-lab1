@@ -18,6 +18,10 @@ public class Scania extends Car {
 
         }
     }
+    @Override
+    protected double speedFactor() {
+        return enginePower * 0.1;
+    }
 
     public void raisePlatform(double amount) {
         if (this.getCurrentSpeed() == 0) {
@@ -35,3 +39,5 @@ public class Scania extends Car {
         }
     }
 }
+
+// hej hej hej

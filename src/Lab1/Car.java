@@ -132,19 +132,26 @@ public abstract class Car implements Movable {
         currentSpeed = 0;
     }
     protected void stopEngine() {
+
         engineIsStarted = false;
         currentSpeed = 0;
-        xVelocity = currentSpeed;
+        //xVelocity = currentSpeed;
     }
 
     protected double speedFactor() {
+/*
         if (getCurrentSpeed() == enginePower) {
             return 0;
-        } else if (getCurrentSpeed() == 0) {
-            return 0;
-        } else if (getCurrentSpeed() < 0) {
+        } /*else if (getCurrentSpeed() == 0) {
             return 0;
         }
+        else if (getCurrentSpeed() < 0) {
+            return 0;
+        } else if (getCurrentSpeed()> 0 && getCurrentSpeed() < enginePower) {
+           return enginePower * 0.1;
+        }
+        */
+
         return 1; // if -1 increments with negative
     }
 
