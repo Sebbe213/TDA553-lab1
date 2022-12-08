@@ -7,7 +7,7 @@ public class Scania extends Car {
 
     public Scania(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xVelocity,
             double yVelocity) {
-        super(2, Color.gray, 90, "Scania Model S", currentSpeed, xVelocity, yVelocity);
+        super(2, Color.gray, 90, "Scania Model S", currentSpeed, xVelocity, yVelocity,false);
 
     }
 

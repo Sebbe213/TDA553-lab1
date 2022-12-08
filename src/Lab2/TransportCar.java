@@ -10,7 +10,7 @@ public class TransportCar extends Car {
 
     protected TransportCar(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed,
             double xVelocity, double yVelocity, int loadingCapacity) {
-        super(nrDoors, color, enginePower, modelName, currentSpeed, xVelocity, yVelocity);
+        super(nrDoors, color, enginePower, modelName, currentSpeed, xVelocity, yVelocity,false);
         this.loadingCapacity = loadingCapacity;
        this.superTool = new SuperTool(getxCoordination(),getyCoordination(),loadingCapacity);
     }
