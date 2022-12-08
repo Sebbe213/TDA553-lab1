@@ -147,6 +147,7 @@ public abstract class Car implements Movable {
 
     protected void decrementSpeed(double amount) {
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
+        xVelocity = currentSpeed;
     }
 
     protected void gas(double amount) {
@@ -156,7 +157,7 @@ public abstract class Car implements Movable {
     }
 
     protected void brake(double amount) {
-        if (0 <= amount || amount <= 1) {
+        if (0 <= amount && amount <= 1) {
             decrementSpeed(amount);
         }
     }

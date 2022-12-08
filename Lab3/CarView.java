@@ -14,8 +14,8 @@ import java.awt.event.ActionListener;
  **/
 
 public class CarView extends JFrame{
-    private static final int X = 800;
-    private static final int Y = 800;
+    private static final int X = 1000;
+    private static final int Y = 1000;
 
     // The controller member
     CarController carC;
@@ -24,13 +24,23 @@ public class CarView extends JFrame{
 
     JPanel controlPanel = new JPanel();
 
+    //__________________________________//
     JPanel gasPanel = new JPanel();
     JSpinner gasSpinner = new JSpinner();
     int gasAmount = 0;
     JLabel gasLabel = new JLabel("Amount of gas");
 
     JButton gasButton = new JButton("Gas");
+
+    //________________________________________//
+
+    JPanel brakePanel = new JPanel();
+    JSpinner brakeSpinner = new JSpinner();
+    int brakeAmount = 0;
+    JLabel brakeLabel = new JLabel("Amount of brake");
     JButton brakeButton = new JButton("Brake");
+
+    //_________________________________________//
     JButton turboOnButton = new JButton("Saab Turbo on");
     JButton turboOffButton = new JButton("Saab Turbo off");
     JButton liftBedButton = new JButton("Scania Lift Bed");
@@ -57,12 +67,28 @@ public class CarView extends JFrame{
 
 
 
-        SpinnerModel spinnerModel =
+        SpinnerModel gasSpinnerModel =
                 new SpinnerNumberModel(0, //initial value
                         0, //min
                         100, //max
                         1);//step
-        gasSpinner = new JSpinner(spinnerModel);
+        gasSpinner = new JSpinner(gasSpinnerModel);
+
+        SpinnerModel brakeSpinnerModel =
+                new SpinnerNumberModel(0, //initial value
+                        0, //min
+                        100, //max
+                        1);//step
+        brakeSpinner = new JSpinner(brakeSpinnerModel);
+
+
+
+        brakeSpinner.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {brakeAmount = (int) ((JSpinner)e.getSource()).getValue(); }
+        });
+
+
         gasSpinner.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
                 gasAmount = (int) ((JSpinner)e.getSource()).getValue();
@@ -75,15 +101,24 @@ public class CarView extends JFrame{
 
         this.add(gasPanel);
 
+        brakePanel.setLayout(new BorderLayout());
+        brakePanel.add(brakeLabel, BorderLayout.PAGE_START);
+        brakePanel.add(brakeSpinner, BorderLayout.PAGE_END);
+
+        this.add(brakePanel);
+
+
+
         controlPanel.setLayout(new GridLayout(2,4));
 
         controlPanel.add(gasButton, 0);
+        //controlPanel.add(brakeButton,0);
         controlPanel.add(turboOnButton, 1);
         controlPanel.add(liftBedButton, 2);
         controlPanel.add(brakeButton, 3);
         controlPanel.add(turboOffButton, 4);
         controlPanel.add(lowerBedButton, 5);
-        controlPanel.setPreferredSize(new Dimension((X/2)+4, 200));
+        controlPanel.setPreferredSize(new Dimension((X/1)+4, 200));
         this.add(controlPanel);
         controlPanel.setBackground(Color.CYAN);
 
@@ -112,6 +147,13 @@ public class CarView extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 carC.gas(gasAmount);
+            }
+        });
+
+        brakeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                carC.brake(brakeAmount);
             }
         });
 
