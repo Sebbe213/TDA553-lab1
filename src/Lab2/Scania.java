@@ -39,5 +39,3 @@ public class Scania extends Car {
         }
     }
 }
-
-// hej hej hej

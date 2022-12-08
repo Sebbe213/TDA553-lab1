@@ -31,7 +31,10 @@ public class TransportCar extends Car {
     @Override
     protected void decrementSpeed(double amount) {
     }
+    @Override
+    public void move() {
 
+    }
     protected void loadOn(Car car) {
         if (transportCarramp.ramp == rear.Level.DOWN) {
             try {

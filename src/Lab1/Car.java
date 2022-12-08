@@ -15,15 +15,17 @@ public abstract class Car implements Movable {
 
 
     protected Car(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xVelocity,
-            double yVelocity, boolean engineIsStarted) {
-        this.nrDoors = nrDoors;
-        this.color = color;
-        this.enginePower = enginePower;
-        this.modelName = modelName;
-        this.currentSpeed = currentSpeed;
-        this.xVelocity = xVelocity;
-        this.yVelocity = yVelocity;
+            double yVelocity, boolean engineIsStarted, double xCoordination, double yCoordination) {
+        this.nrDoors = 2;
+        this.color = Color.black;
+        this.enginePower = 120;
+        this.modelName = "modelName";
+        this.currentSpeed = 10;
+        this.xVelocity = 1000;
+        this.yVelocity = 1000;
         this.engineIsStarted = false;
+        this.xCoordination = xCoordination;
+        this.yCoordination = yCoordination;
     }
 
     public void turnRight() {
