@@ -1,10 +1,10 @@
-Vi har en typ som kallas för Car. I Car har vi implementerat Gas och break metoderna .
+Vi har en typ som kallas för Car. I Car har vi implementerat Gas och break metoderna.
 Kontraktet som vi har skapat för dessa metoder är att:
 "Om gas metoden initieras bör den kalla på metoden incrementspeed och enbart öka currentspeed med en given amount.
 Om break metoden initieras bör den kalla på metoden decrementspeed och enbart minska currentspeed med given amount.
 I Volvo och Scania följs kontraktet ovan då båda klasserna ärver från Car och tester har utförts.
 
-Vår design försäkrar att subtyperna bland annat Saab, Volvo och Scania beter sig på exakt samma sätt som deras supertyp i enlighet med kontraktets specifikation, och därmed följer designen
+Vår design försäkrar att subtyperna bland annat Saab och Volvo beter sig på exakt samma sätt som deras supertyp i enlighet med kontraktets specifikation, och därmed följer designen
 Liskov susbtitution pirnciple.
 
 Det största problemet vi hade vad gäller duplicering av kod var mellan transport car och repair shop. Där används exakt samma metoder för att lasta av och på samt parkera in och ut bilarna. Det var inte möjligt
