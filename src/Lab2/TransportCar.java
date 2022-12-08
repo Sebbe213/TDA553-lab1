@@ -9,8 +9,8 @@ public class TransportCar extends Car {
     private Ramp transportCarramp = new Ramp();
 
     protected TransportCar(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed,
-            double xVelocity, double yVelocity, int loadingCapacity) {
-        super(nrDoors, color, enginePower, modelName, currentSpeed, xVelocity, yVelocity,false);
+            double xVelocity, double yVelocity,double xCoordination, double yCoordination, int loadingCapacity) {
+        super(2, Color.WHITE, 90, "teslaTransportModelS", currentSpeed, xVelocity, yVelocity,false,xCoordination, yCoordination);
         this.loadingCapacity = loadingCapacity;
        this.superTool = new SuperTool(getxCoordination(),getyCoordination(),loadingCapacity);
     }
@@ -26,6 +26,7 @@ public class TransportCar extends Car {
 
     @Override
     protected void incrementSpeed(double amount) {
+
     }
 
     @Override
