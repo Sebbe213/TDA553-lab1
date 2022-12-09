@@ -39,21 +39,21 @@ class ScaniaTest {
     }
 
     @Test
-    void shouldIncrementSpeedOnlyIfPlatforIsUp() {
-        Scania scaniaS = new Scania(2, Color.gray, 90, "Scania Model S", 10, 0, 0,0,0);
+    void shouldIncrementSpeedOnlyIfPlatformIsDown() {
+        Scania scaniaS = new Scania(2, Color.gray, 90, "Scania Model S", 0, 0, 0,0,0);
         scaniaS.startEngine();
         scaniaS.incrementSpeed(10);
-        assertEquals(10.1, scaniaS.getCurrentSpeed());
+        assertEquals(9.0, scaniaS.getCurrentSpeed());
 
 
 
     }
     @Test
-    void shouldNotIncrementSpeedIfPlatforIsDown(){
+    void shouldNotIncrementSpeedIfPlatformIsUp(){
         Scania scaniaS = new Scania(2, Color.gray, 90, "Scania Model S", 0, 0, 0,0,0);
         scaniaS.startEngine();
         scaniaS.raisePlatform(20);
         scaniaS.incrementSpeed(2);
-        assertEquals(0.1, scaniaS.getCurrentSpeed());
+        assertEquals(0, scaniaS.getCurrentSpeed());
     }
 }

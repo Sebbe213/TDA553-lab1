@@ -1,6 +1,7 @@
 import java.awt.*;
 
 
+
 public class Scania extends Car {
 
     Platform platta = new Platform(rear.Level.UP, 0);
@@ -12,8 +13,11 @@ public class Scania extends Car {
 
     @Override
     protected void incrementSpeed(double amount) {
-        if (platta.platform == rear.Level.UP) {
+        if (platta.platform == rear.Level.DOWN) {
             super.incrementSpeed(amount);
+            
+        } else if(platta.platform == rear.Level.UP){
+            super.incrementSpeed(0);
         }
     }
     @Override
