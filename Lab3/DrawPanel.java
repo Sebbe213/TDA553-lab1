@@ -30,9 +30,6 @@ public class DrawPanel extends JPanel{
 
      */
 
-
-
-
     // TODO: Make this genereal for all cars
     void moveit(int x, int y){
         volvoPoint.x = x;
