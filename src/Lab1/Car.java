@@ -7,72 +7,70 @@ public abstract class Car implements Movable {
     protected double enginePower;
     protected String modelName;
     private double currentSpeed;
-    protected double xVelocity;
-    protected double yVelocity;
+    protected double xMultiplier;
+    protected double yMultiplier;
     private double xCoordination;
     protected double yCoordination;
     protected boolean engineIsStarted;
 
 
-    protected Car(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xVelocity,
-            double yVelocity, boolean engineIsStarted, double xCoordination, double yCoordination) {
+    protected Car(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xMultiplier,
+            double yMultiplier, boolean engineIsStarted, double xCoordination, double yCoordination) {
         this.nrDoors = nrDoors;
         this.color = color;
         this.enginePower = enginePower;
         this.modelName = modelName;
         this.currentSpeed = currentSpeed;
-        this.xVelocity = xVelocity;
-        this.yVelocity = yVelocity;
+        this.xMultiplier = xMultiplier;
+        this.yMultiplier = yMultiplier;
         this.engineIsStarted = false;
         this.xCoordination = xCoordination;
         this.yCoordination = yCoordination;
     }
 
     public void turnRight() {
-        if (yVelocity == 0) {
-            if (xVelocity > 0) {
-                xVelocity = 0;
-                yVelocity = 1 * currentSpeed;
-            } else if (xVelocity < 0) {
-                xVelocity = 0;
-                yVelocity = -1 * currentSpeed;
+        if (yMultiplier == 0) {
+            if (xMultiplier > 0) {
+                xMultiplier = 0;
+                yMultiplier = 1;
+            } else if (xMultiplier < 0) {
+                xMultiplier = 0;
+                yMultiplier = -1;
             }
-        } else if (xVelocity == 0) {
-            if (yVelocity < 0) {
-                xVelocity = 1 * currentSpeed;
-                yVelocity = 0;
-            } else if (yVelocity > 0) {
-                xVelocity = -1 * currentSpeed;
-                yVelocity = 0;
+        } else if (xMultiplier == 0) {
+            if (yMultiplier < 0) {
+                xMultiplier = 1;
+                yMultiplier = 0;
+            } else if (yMultiplier > 0) {
+                xMultiplier = -1;
+                yMultiplier = 0;
             }
         }
     }
 
     public void turnLeft() {
-        if (yVelocity == 0) {
-            if (xVelocity > 0) {
-                xVelocity = 0;
-                yVelocity = -1 * currentSpeed;
-            } else if (xVelocity < 0) {
-                xVelocity = 0;
-                xVelocity = 1 * currentSpeed;
+        if (yMultiplier == 0) {
+            if (xMultiplier > 0) {
+                xMultiplier = 0;
+                yMultiplier = -1;
+            } else if (xMultiplier < 0) {
+                xMultiplier = 0;
+                xMultiplier = 1;
             }
-        } else if (xVelocity == 0) {
-            if (yVelocity < 0) {
-                xVelocity = -1 * currentSpeed;
-                yVelocity = 0;
-            } else if (yVelocity > 0) {
-                xVelocity = 1 * currentSpeed;
-                yVelocity = 0;
+        } else if (xMultiplier == 0) {
+            if (yMultiplier < 0) {
+                xMultiplier = -1;
+                yMultiplier = 0;
+            } else if (yMultiplier > 0) {
+                xMultiplier = 1;
+                yMultiplier = 0;
             }
         }
     }
 
     public void move() {
-
             updatexCoordination();
             updateyCoordination();
-
     }
 
     public void setX(double x) {
@@ -84,7 +82,7 @@ public abstract class Car implements Movable {
     }
 
     protected void updatexCoordination() {
-        xCoordination += Math.abs(xVelocity);
+        xCoordination += xMultiplier * currentSpeed;
     }
 
     protected double getxCoordination() {
@@ -92,7 +90,7 @@ public abstract class Car implements Movable {
     }
 
     protected void updateyCoordination() {
-        yCoordination += Math.abs(yVelocity);
+        yCoordination += yMultiplier *  currentSpeed;
     }
 
     protected double getyCoordination() {
@@ -100,12 +98,12 @@ public abstract class Car implements Movable {
     }
 
     // ______________________________________________________//
-    protected double getxVelocity() {
-        return xVelocity;
+    protected double getxMultiplier() {
+        return xMultiplier;
     }
 
-    protected double getyVelocity() {
-        return yVelocity;
+    protected double getyMultiplier() {
+        return yMultiplier;
     }
     // ______________________________________________________//
 
@@ -137,33 +135,18 @@ public abstract class Car implements Movable {
 
         engineIsStarted = false;
         currentSpeed = 0;
-        //xVelocity = currentSpeed;
     }
 
     protected double speedFactor() {
-/*
-        if (getCurrentSpeed() == enginePower) {
-            return 0;
-        } /*else if (getCurrentSpeed() == 0) {
-            return 0;
-        }
-        else if (getCurrentSpeed() < 0) {
-            return 0;
-        } else if (getCurrentSpeed()> 0 && getCurrentSpeed() < enginePower) {
-           return enginePower * 0.1;
-        }
-        */
-
-        return 1; // if -1 increments with negative
+        return 1;
     }
 
     protected void incrementSpeed(double amount) {
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;
+
         if (currentSpeed > enginePower) {
             currentSpeed = enginePower;
         }
-
-        xVelocity = currentSpeed; // this must change, current speed must be sat to that direction the car is moving in
     }
 
     protected void decrementSpeed(double amount) {
@@ -174,7 +157,6 @@ public abstract class Car implements Movable {
         if (currentSpeed < 0) {
             currentSpeed = 0;
         }
-        xVelocity = currentSpeed;
     }
 
     protected void gas(double amount) {
@@ -189,4 +171,3 @@ public abstract class Car implements Movable {
         }
     }
 }
-

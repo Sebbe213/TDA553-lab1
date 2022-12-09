@@ -31,7 +31,7 @@ public class CarController {
         CarController cc = new CarController();
         //CarController ss = new CarController();
 
-        cc.cars.add(new Volvo240(4,Color.white,100,"Volvo240",0,0,0,0,0));
+        cc.cars.add(new Volvo240(4,Color.white,100,"Volvo240",0,1,0,0,0));
         //ss.cars.add(new Saab95(2,Color.WHITE, 100,"ScaniaModelS", 0,0,0));
 
         // Start a new view and send a reference of self
@@ -63,7 +63,12 @@ public class CarController {
         for (Car car : cars
         ) {
             car.gas(gas);
-            System.out.println(car.getCurrentSpeed());
+
+            System.out.println("currentSpeed  = " + car.getCurrentSpeed());
+            System.out.println("xVelocity     = " + car.getxMultiplier());
+            System.out.println("xCoordination = " + car.getxCoordination());
+            System.out.println("yVelocity     = " + car.getyMultiplier());
+            System.out.println("yCoordination = " + car.getyCoordination());
 
         }
     }
@@ -72,8 +77,11 @@ public class CarController {
         for (Car car : cars
         ) {
             car.brake(brake);
-            System.out.println(car.getCurrentSpeed());
-
+            System.out.println("currentSpeed  = " + car.getCurrentSpeed());
+            System.out.println("xVelocity     = " + car.getxMultiplier());
+            System.out.println("xCoordination = " + car.getxCoordination());
+            System.out.println("yVelocity     = " + car.getyMultiplier());
+            System.out.println("yCoordination = " + car.getyCoordination());
         }
     }
     void startEngine() {
