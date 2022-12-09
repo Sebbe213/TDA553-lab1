@@ -13,12 +13,12 @@ public class Scania extends Car {
     @Override
     protected void incrementSpeed(double amount) {
         if (platta.platform == rear.Level.UP) {
-            currentspeed = 0.01 * enginePower
+            super.incrementSpeed(amount);
         }
     }
     @Override
     protected double speedFactor() {
-        return enginePower * 0.1;
+        return enginePower * 0.01;
     }
 
     public void raisePlatform(double amount) {
