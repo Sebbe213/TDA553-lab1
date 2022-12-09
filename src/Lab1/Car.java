@@ -69,10 +69,10 @@ public abstract class Car implements Movable {
     }
 
     public void move() {
-        if (engineIsStarted) {
+
             updatexCoordination();
             updateyCoordination();
-        }
+
     }
 
     public void setX(double x) {
@@ -163,7 +163,7 @@ public abstract class Car implements Movable {
             currentSpeed = enginePower;
         }
 
-        //xVelocity = currentSpeed; // this must change, current speed must be sat to that direction the car is moving in
+        xVelocity = currentSpeed; // this must change, current speed must be sat to that direction the car is moving in
     }
 
     protected void decrementSpeed(double amount) {
@@ -174,18 +174,18 @@ public abstract class Car implements Movable {
         if (currentSpeed < 0) {
             currentSpeed = 0;
         }
-        //xVelocity = currentSpeed;
+        xVelocity = currentSpeed;
     }
 
     protected void gas(double amount) {
-        if (0 <= amount && amount <= 1) {
+        if (0 <= amount && amount <= 1 && engineIsStarted) {
             // currentspeed = 10
             incrementSpeed(amount);
         }
     }
 
     protected void brake(double amount) {
-        if (0 <= amount && amount <= 1) {
+        if (0 <= amount && amount <= 1 && engineIsStarted) {
             decrementSpeed(amount);
         }
     }
