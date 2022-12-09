@@ -29,9 +29,9 @@ public class CarController {
     public static void main(String[] args) {
         // Instance of this class
         CarController cc = new CarController();
-        CarController ss = new CarController();
+        //CarController ss = new CarController();
 
-        cc.cars.add(new Scania(4,Color.white,100,"Volvo240",0,0,0));
+        cc.cars.add(new Volvo240(4,Color.white,100,"Volvo240",0,0,0,0,0));
         //ss.cars.add(new Saab95(2,Color.WHITE, 100,"ScaniaModelS", 0,0,0));
 
         // Start a new view and send a reference of self
@@ -62,16 +62,18 @@ public class CarController {
         double gas = ((double) amount) / 100;
         for (Car car : cars
         ) {
-            System.out.println(car.getCurrentSpeed());
             car.gas(gas);
+            System.out.println(car.getCurrentSpeed());
+
         }
     }
     void brake(int amount) {
         double brake = ((double) amount) / 100;
         for (Car car : cars
         ) {
-            System.out.println(car.getCurrentSpeed());
             car.brake(brake);
+            System.out.println(car.getCurrentSpeed());
+
         }
     }
     void startEngine() {

@@ -9,9 +9,9 @@ public class RepairShopTest {
     public void shouldParkInACarToRepairShop() {
 
         RepairShop repairshop = new RepairShop(4, 0, 0, "Mekonomen");
-        Saab95 saab = new Saab95(2, Color.WHITE, 125, "Saab95", 10, 10, 0);
-        Saab95 saab2 = new Saab95(2, Color.WHITE, 125, "Saab95", 0, 10, 0);
-        Saab95 saab3 = new Saab95(2, Color.WHITE, 125, "Saab95", 0, 10, 0);
+        Saab95 saab = new Saab95(2, Color.WHITE, 125, "Saab95", 10, 0.1, 0,0,0);
+        Saab95 saab2 = new Saab95(2, Color.WHITE, 125, "Saab95", 10, 0.1, 0,0,0);
+        Saab95 saab3 = new Saab95(2, Color.WHITE, 125, "Saab95", 10, 0.1, 0,0,0);
 
         repairshop.parkIn(saab);
         repairshop.parkIn(saab2);
@@ -23,8 +23,8 @@ public class RepairShopTest {
     @Test
     public void shouldParkOutACarFromRepairShop() {
         RepairShop repairshop = new RepairShop(3, 0, 0, "Mekonomen");
-        Saab95 saab = new Saab95(2, Color.WHITE, 125, "Saab95", 0, 10, 0);
-        Saab95 saab2 = new Saab95(2, Color.WHITE, 125, "Saab95", 0, 10, 0);
+        Saab95 saab = new Saab95(2, Color.WHITE, 125, "Saab95", 10, 0.1, 0,0,0);
+        Saab95 saab2 = new Saab95(2, Color.WHITE, 125, "Saab95", 10, 0.1, 0,0,0);
 
         repairshop.parkIn(saab);
         repairshop.parkIn(saab2);

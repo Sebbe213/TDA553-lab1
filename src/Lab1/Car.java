@@ -131,7 +131,7 @@ public abstract class Car implements Movable {
 
     protected void startEngine() {
         engineIsStarted = true;
-        currentSpeed = 0;
+        currentSpeed = 0.1;
     }
     protected void stopEngine() {
 
@@ -159,16 +159,27 @@ public abstract class Car implements Movable {
 
     protected void incrementSpeed(double amount) {
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;
-        xVelocity = currentSpeed;
+        if (currentSpeed > enginePower) {
+            currentSpeed = enginePower;
+        }
+
+        //xVelocity = currentSpeed; // this must change, current speed must be sat to that direction the car is moving in
     }
 
     protected void decrementSpeed(double amount) {
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
-        xVelocity = currentSpeed;
+
+        // checking if the current speed is going above the engine power.
+        // Obs! if this if_statement is deleted the currentSpeed might and in most cases will go above enginePower even a little before the next iteration
+        if (currentSpeed < 0) {
+            currentSpeed = 0;
+        }
+        //xVelocity = currentSpeed;
     }
 
     protected void gas(double amount) {
         if (0 <= amount && amount <= 1) {
+            // currentspeed = 10
             incrementSpeed(amount);
         }
     }
