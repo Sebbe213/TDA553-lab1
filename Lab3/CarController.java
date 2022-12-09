@@ -63,7 +63,7 @@ public class CarController {
         for (Car car : cars
         ) {
             car.gas(gas);
-
+            System.out.println("__________________________________________");
             System.out.println("currentSpeed  = " + car.getCurrentSpeed());
             System.out.println("xVelocity     = " + car.getxMultiplier());
             System.out.println("xCoordination = " + car.getxCoordination());
@@ -77,6 +77,7 @@ public class CarController {
         for (Car car : cars
         ) {
             car.brake(brake);
+            System.out.println("__________________________________________");
             System.out.println("currentSpeed  = " + car.getCurrentSpeed());
             System.out.println("xVelocity     = " + car.getxMultiplier());
             System.out.println("xCoordination = " + car.getxCoordination());

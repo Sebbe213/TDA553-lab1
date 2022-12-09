@@ -20,7 +20,7 @@ public class Volvo240 extends Car {
             // speedFactor will play the main role player when gas and brake, gas will call increment speed and then speedFactor will be added to currentSpeed and break will call on decrement speed which will subtract speedFactor from currentSpeed
 
         }  else if (getCurrentSpeed() == 0 || getCurrentSpeed() == enginePower) {
-            return 0.5;}
+            return 0.1;}
 
         return -1;
     }
