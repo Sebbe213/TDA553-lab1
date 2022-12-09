@@ -131,7 +131,7 @@ public abstract class Car implements Movable {
 
     protected void startEngine() {
         engineIsStarted = true;
-        currentSpeed = 0.1;
+        currentSpeed = 0;
     }
     protected void stopEngine() {
 
@@ -179,7 +179,6 @@ public abstract class Car implements Movable {
 
     protected void gas(double amount) {
         if (0 <= amount && amount <= 1 && engineIsStarted) {
-            // currentspeed = 10
             incrementSpeed(amount);
         }
     }
