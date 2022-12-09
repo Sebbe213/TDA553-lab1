@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class TransportCar extends Car {
+public class TransportCar extends Truck {
 
     private int loadingCapacity;
 
@@ -10,7 +10,7 @@ public class TransportCar extends Car {
 
     protected TransportCar(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed,
             double xVelocity, double yVelocity,double xCoordination, double yCoordination, int loadingCapacity) {
-        super(2, Color.WHITE, 90, "teslaTransportModelS", currentSpeed, xVelocity, yVelocity,false,xCoordination, yCoordination);
+        super(2, Color.WHITE, 90, "teslaTransportModelS", currentSpeed, xVelocity, yVelocity,false,xCoordination, yCoordination, new Ramp());
         this.loadingCapacity = loadingCapacity;
        this.superTool = new SuperTool(getxCoordination(),getyCoordination(),loadingCapacity);
     }
@@ -26,7 +26,7 @@ public class TransportCar extends Car {
     }
 
     protected void loadOn(Car car) {
-        if (transportCarramp.ramp == rear.Level.DOWN) {
+        if (this.getCurrentSpeed() == 0 && !canMove()) {
             try {
                 superTool.loadOn(car);
             } catch (Exception e) {
@@ -36,7 +36,7 @@ public class TransportCar extends Car {
     }
 
     protected void loadOff() {
-        if (this.getCurrentSpeed() == 0 && transportCarramp.ramp == rear.Level.DOWN) {
+        if (this.getCurrentSpeed() == 0 && !canMove()) {
             try {
                 superTool.loadOff();
 
@@ -47,17 +47,8 @@ public class TransportCar extends Car {
         }
     }
 
-    protected void lowerRamp() {
-        if (this.getCurrentSpeed() == 0) {
-            transportCarramp.setRampDown();
-        }
-    }
 
-    protected void raiseRamp() {
-        if (this.getCurrentSpeed() == 0) {
-            transportCarramp.setRampUp();
-        }
-    }
+
 }
 
 

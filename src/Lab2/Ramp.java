@@ -1,21 +1,24 @@
-public class Ramp implements rear {
+public class Ramp implements iPlatformInterface {
+
     Level ramp;
 
-    protected void setRampUp() {
+    public Ramp(){
+        ramp =Level.UP;
+    }
+
+    @Override
+    public void lower() {
+        ramp = Level.DOWN;
+    }
+
+    @Override
+    public void raise() {
         ramp = Level.UP;
 
     }
 
-    protected void setRampDown() {
-        ramp = Level.DOWN;
+    @Override
+    public boolean canMove() {
+        return ramp == Level.UP;
     }
-
-    protected void getRampTrue() {
-        setRampUp();
-    }
-
-    protected void getRampFalse() {
-        setRampDown();
-    }
-
 }

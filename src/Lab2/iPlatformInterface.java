@@ -1,5 +1,6 @@
 public interface iPlatformInterface {
-    void lower(double amount);
+    void lower();
+    void raise();
 
-    void raise(double amount);
+    boolean canMove();
 }

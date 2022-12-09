@@ -2,6 +2,7 @@ Vi har en typ som kallas för Car. I Car har vi implementerat Gas och break meto
 Kontraktet som vi har skapat för dessa metoder är att:
 "Om gas metoden initieras bör den kalla på metoden incrementspeed och enbart öka currentspeed med en given amount.
 Om break metoden initieras bör den kalla på metoden decrementspeed och enbart minska currentspeed med given amount.
+Detta gäller då de är i rätt state, det vill säga att metodernas villkor ex canMove()) uppnås."
 I Volvo och Scania följs kontraktet ovan då båda klasserna ärver från Car och tester har utförts.
 
 Vår design försäkrar att subtyperna bland annat Saab och Volvo beter sig på exakt samma sätt som deras supertyp i enlighet med kontraktets specifikation, och därmed följer designen
