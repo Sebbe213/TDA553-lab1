@@ -13,9 +13,16 @@ public abstract class Car implements Movable {
     protected double yCoordination;
     protected boolean engineIsStarted;
 
+    public boolean isEngineIsStarted() {
+        return engineIsStarted;
+    }
+
+    public void setEngineIsStarted(boolean engineIsStarted) {
+        this.engineIsStarted = engineIsStarted;
+    }
 
     protected Car(int nrDoors, Color color, double enginePower, String modelName, double currentSpeed, double xMultiplier,
-            double yMultiplier, boolean engineIsStarted, double xCoordination, double yCoordination) {
+                  double yMultiplier, boolean engineIsStarted, double xCoordination, double yCoordination) {
         this.nrDoors = nrDoors;
         this.color = color;
         this.enginePower = enginePower;
@@ -69,8 +76,8 @@ public abstract class Car implements Movable {
     }
 
     public void move() {
-            updatexCoordination();
-            updateyCoordination();
+        updatexCoordination();
+        updateyCoordination();
     }
 
     public void setX(double x) {
@@ -82,7 +89,7 @@ public abstract class Car implements Movable {
     }
 
     protected void updatexCoordination() {
-        xCoordination += xMultiplier * currentSpeed;
+        this.xCoordination += this.xMultiplier * this.currentSpeed;
     }
 
     protected double getxCoordination() {
@@ -169,5 +176,41 @@ public abstract class Car implements Movable {
         if (0 <= amount && amount <= 1 && engineIsStarted) {
             decrementSpeed(amount);
         }
+    }
+
+    protected void setNrDoors(int nrDoors) {
+        this.nrDoors = nrDoors;
+    }
+
+    protected void setEnginePower(double enginePower) {
+        this.enginePower = enginePower;
+    }
+
+    protected String getModelName() {
+        return modelName;
+    }
+
+    protected void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    protected void setCurrentSpeed(double currentSpeed) {
+        this.currentSpeed = currentSpeed;
+    }
+
+    protected void setxMultiplier(double xMultiplier) {
+        this.xMultiplier = xMultiplier;
+    }
+
+    protected void setyMultiplier(double yMultiplier) {
+        this.yMultiplier = yMultiplier;
+    }
+
+    protected void setxCoordination(double xCoordination) {
+        this.xCoordination = xCoordination;
+    }
+
+    protected void setyCoordination(double yCoordination) {
+        this.yCoordination = yCoordination;
     }
 }
