@@ -19,7 +19,6 @@ public class MVCDemo {
 
         CarController cc = new CarController(cars);
         cc.startTimer();
-        // Start the timer
     }
 
 }

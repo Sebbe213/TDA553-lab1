@@ -21,14 +21,6 @@ public class DrawPanel extends JPanel{   //this could all be in the view
     Point saabPoint = new Point();
 
 
-    /*public void getName() {
-
-    }
-    public String setName() {
-
-    }
-
-     */
 
     // TODO: Make this genereal for all cars
     void moveit(int x, int y){

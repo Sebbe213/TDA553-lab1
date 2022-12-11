@@ -25,3 +25,4 @@ public class Volvo240 extends Car {
         return -1;
     }
 }
+//commit test
